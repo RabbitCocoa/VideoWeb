@@ -72,8 +72,9 @@
         ,cols: [[ //标题栏
             {field: 'id', title: '用户名', width: 100, sort: true}
             ,{field: 'username', title: '昵称', width: 120}
-            ,{field: 'sex', title: '性别', width: 120}
             ,{field: 'email', title: '邮箱', minWidth: 80}
+            ,{field: 'state', title: '状态', minWidth: 80}
+            ,{field: 'CreateTime', title: '创建时间', minWidth: 120, sort: true}
             ,{field: 'LoginTime', title: '最后登陆时间', minWidth: 120, sort: true}
             ,{field: 'experience', title: '视频点赞数', width: 120, sort: true}
             ,{field: 'tempId', title: '操作',width: 120, templet: function(d){
@@ -84,17 +85,18 @@
             "id": "10001"
             ,"username": "杜甫"
             ,"email": "xianxin@layui.com"
-            ,"sex": "男"
+            ,"state": "正常"
             ,"city": "浙江杭州"
             ,"experience": "116"
+            ,"CreateTime": "2017-12-12"
             ,"LoginTime": "2019-12-12"
         }, {
             "id": "10002"
             ,"username": "李白"
             ,"email": "xianxin@layui.com"
-            ,"sex": "男"
             ,"city": "浙江杭州"
             ,"experience": "116"
+            ,"CreateTime": "2017-12-12"
             ,"LoginTime": "2019-12-11"
         }]
         ,skin: 'line' //表格风格
