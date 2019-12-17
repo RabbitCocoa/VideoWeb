@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    //取得项目路径
+    String bashPath=request.getContextPath()+"/jsp/video/";
+%>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -73,10 +77,10 @@
         <div class="wrap-header"  >
             <div class="zerogrid">
                 <div class="row">
-                    <a href="index.html" class="logo"><img src="images/logo3.png" width="200" ></a>
+                    <a href="/VideoWeb/index.jsp" class="logo"><img src="images/logo3.png" width="200" ></a>
                     <ul class="social">
-                        <li><a href="#" title="发布视频"><i class="fa fa-upload"></i></a></li>
-                        <li><a href="#" title="个人信息"><i class="fa fa-user"></i></a></li>
+                        <li><a href="/VideoWeb/jsp/user/userContribute.jsp" title="发布视频"><i class="fa fa-upload"></i></a></li>
+                        <li><a href="/VideoWeb/jsp/user/userInfo.jsp" title="个人信息"><i class="fa fa-user"></i></a></li>
                         <li><a href="#" title="消息通知"><i class="fa fa-bell"></i></a></li>
                     </ul>
 
@@ -88,7 +92,7 @@
     <a href="#" class="nav-toggle">Toggle Navigation</a>
     <nav class="cmn-tile-nav">
         <ul class="clearfix">
-            <li class="colour-1"><a href="index.jsp">首页</a></li>
+            <li class="colour-1"><a href="../../index.jsp">首页</a></li>
             <li class="colour-2"><a href="browser.jsp?">动画</a></li>
             <li class="colour-3"><a href="browser.jsp?">音乐</a></li>
             <li class="colour-4"><a href="browser.jsp?">游戏</a></li>

@@ -32,6 +32,10 @@ public class DBManager {
                 conf.setUsingDb(pros.getProperty("UsingDB"));
                 conf.setDbName((pros.getProperty("DbName")));
                 conf.setPoPackage((pros.getProperty("PoPackage")));
+                conf.setImgPath((pros.getProperty("ImgPath")));
+                conf.setCovPath((pros.getProperty("CovPath")));
+                conf.setVdoPath((pros.getProperty("VdoPath")));
+                conf.setProjectName(pros.getProperty("ProjectName"));
             }
             else{
                 System.out.println("加载配置信息失败");

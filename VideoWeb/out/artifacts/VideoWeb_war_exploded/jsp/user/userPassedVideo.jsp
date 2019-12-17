@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    //取得项目路径
+    String bashPath=request.getContextPath()+"/jsp/user/";
+%>
 <!DOCTYPE html>
 <head>
     <title>Home</title>
@@ -62,7 +66,7 @@
                     </a>
                     <ul class="dropdown-menu extended logout">
                         <li><a href="userSetting.jsp"><i class="fa fa-cog"></i> 修改密码</a></li>
-                        <li><a href="../video/login.jsp"><i class="fa fa-key"></i> 注销</a></li>
+                        <li><a href="../../login.jsp"><i class="fa fa-key"></i> 注销</a></li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->

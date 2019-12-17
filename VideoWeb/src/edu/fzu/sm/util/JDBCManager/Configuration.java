@@ -1,7 +1,7 @@
 package edu.fzu.sm.util.JDBCManager;
 
 /**
- 配置信息管理类 ，保存读取的配置信息
+ * 配置信息管理类 ，保存读取的配置信息
  */
 public class Configuration {
     private String Driver; //驱动类
@@ -11,6 +11,42 @@ public class Configuration {
     private String UsingDb;//使用的数据库 mysql
     private String DbName;//数据库名
     private String PoPackage;//实体类路径
+    private String ImgPath;//保存的头像路径
+    private String VdoPath;//保存的视频路径
+    private String CovPath;//保存的封面路径
+    private String ProjectName;//项目名
+
+    public String getProjectName() {
+        return ProjectName;
+    }
+
+    public void setProjectName(String projectName) {
+        ProjectName = projectName;
+    }
+
+    public String getCovPath() {
+        return CovPath;
+    }
+
+    public void setCovPath(String covPath) {
+        CovPath = covPath;
+    }
+
+    public String getImgPath() {
+        return ImgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        ImgPath = imgPath;
+    }
+
+    public String getVdoPath() {
+        return VdoPath;
+    }
+
+    public void setVdoPath(String vdoPath) {
+        VdoPath = vdoPath;
+    }
 
     public String getPoPackage() {
         return PoPackage;
@@ -34,7 +70,8 @@ public class Configuration {
         User = user;
         Password = password;
         UsingDb = usingDb;
-        this.DbName=DbName;
+        this.DbName = DbName;
+
     }
 
     public Configuration() {

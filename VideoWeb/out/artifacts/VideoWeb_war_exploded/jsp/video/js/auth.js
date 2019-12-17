@@ -26,6 +26,9 @@ var Auth = {
 		Auth.vars.lowin_register.className += ' lowin-animated-flip';
 
 		Auth.setHeight(Auth.vars.lowin_register.offsetHeight + Auth.vars.lowin_footer.offsetHeight);
+		Auth.vars.lowin_register.querySelector('form').setAttribute('method', "post");
+		Auth.vars.lowin_register.querySelector('form').setAttribute('action', "/VideoWeb/RegisterServlet");
+
 
 		e.preventDefault();
 	},
@@ -49,7 +52,7 @@ var Auth = {
 		e.preventDefault();
 	},
 	forgot(e) {
-		Auth.vars.password_group.classList += ' lowin-animated';
+		Auth.vars.password_group.classList += 'lowin-animated';
 		Auth.vars.login_back_link.style.display = 'block';
 
 		setTimeout(() => {
@@ -58,16 +61,18 @@ var Auth = {
 			Auth.vars.password_group.style.margin = 0;
 		}, 100);
 		
-		Auth.vars.login_btn.innerText = 'Forgot Password';
+		Auth.vars.login_btn.innerText = '忘记密码';
 
 		Auth.setHeight(Auth.vars.lowin_wrapper_height - Auth.vars.password_group_height);
-		Auth.vars.lowin_login.querySelector('form').setAttribute('action', Auth.vars.option.forgot_url);
+
+		//Auth.vars.lowin_login.querySelector('form').setAttribute('method', "post");
+	//	Auth.vars.lowin_login.querySelector('form').setAttribute('action', "/VideoWeb/ForgetServlet");
 
 		e.preventDefault();
 	},
 	loginback(e) {
 		Auth.vars.password_group.classList.remove('lowin-animated');
-		Auth.vars.password_group.classList += ' lowin-animated-back';
+		Auth.vars.password_group.classList += 'lowin-animated-back';
 		Auth.vars.password_group.style.display = 'block';
 
 		setTimeout(() => {
@@ -81,8 +86,9 @@ var Auth = {
 			Auth.vars.password_group.classList.remove('lowin-animated-back');
 		}, 1000);
 
-		Auth.vars.login_btn.innerText = 'Sign In';
-		Auth.vars.lowin_login.querySelector('form').setAttribute('action', Auth.vars.option.login_url);
+		Auth.vars.login_btn.innerText = '登陆';
+		//Auth.vars.lowin_login.querySelector('form').setAttribute('method', "post");
+		//Auth.vars.lowin_login.querySelector('form').setAttribute('action', "/VideoWeb/LoginServlet");
 
 		Auth.setHeight(Auth.vars.lowin_wrapper_height);
 		
@@ -105,7 +111,8 @@ var Auth = {
 		Auth.vars.lowin_wrapper_height = Auth.vars.lowin_wrapper.offsetHeight;
 
 		Auth.vars.option = option;
-		Auth.vars.lowin_login.querySelector('form').setAttribute('action', option.login_url);
+		//Auth.vars.lowin_login.querySelector('form').setAttribute('method', "post");
+	//	Auth.vars.lowin_login.querySelector('form').setAttribute('action', "/VideoWeb/LoginServlet");
 
 		var len = Auth.vars.box.length - 1;
 

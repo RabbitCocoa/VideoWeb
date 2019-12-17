@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    //取得项目路径
+    String bashPath=request.getContextPath();
+
+%>
 <!DOCTYPE html>
 <head>
     <title>Home</title>
@@ -14,24 +19,24 @@
     <meta name="keywords" content="" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- bootstrap-css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/user/css/bootstrap.min.css" >
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
-    <link href="css/style.css" rel='stylesheet' type='text/css' />
-    <link href="css/style-responsive.css" rel="stylesheet"/>
+    <link href="<%=bashPath%>/jsp/user/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="<%=bashPath%>/jsp/user/css/style-responsive.css" rel="stylesheet"/>
     <!-- font CSS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
-    <link rel="stylesheet" href="css/font.css" type="text/css"/>
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/morris.css" type="text/css"/>
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/user/css/font.css" type="text/css"/>
+    <link href="<%=bashPath%>/jsp/user/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/user/css/morris.css" type="text/css"/>
     <!-- calendar -->
-    <link rel="stylesheet" href="css/monthly.css">
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/user/css/monthly.css">
     <!-- //calendar -->
     <!-- //font-awesome icons -->
-    <script src="js/jquery2.0.3.min.js"></script>
-    <script src="js/raphael-min.js"></script>
-    <script src="js/morris.js"></script>
+    <script src="<%=bashPath%>/jsp/user/js/jquery2.0.3.min.js"></script>
+    <script src="<%=bashPath%>/jsp/user/js/raphael-min.js"></script>
+    <script src="<%=bashPath%>/jsp/user/js/morris.js"></script>
 </head>
 <body>
 <section id="container">
@@ -56,14 +61,14 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="../image2/10.jpg">
-                        <span class="username">John Doe</span>
+                        <img alt="" src="${sessionScope.user.photo}">
+                        <span class="username">${sessionScope.user.nickname}</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
 
                         <li><a href="userSetting.jsp"><i class="fa fa-cog"></i>修改密码</a></li>
-                        <li><a href="../video/login.jsp"><i class="fa fa-key"></i> 注销</a></li>
+                        <li><a href="../../login.jsp"><i class="fa fa-key"></i> 注销</a></li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->
@@ -197,25 +202,25 @@
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-3">昵称</label>
                                         <div class="col-lg-6">
-                                            <input  class=" form-control" id="cname" name="name" minlength="2" type="text" value="22娘" >
+                                            <input  class=" form-control" id="cname" name="name" minlength="2" type="text" value="${sessionScope.user.nickname}" >
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-3">用户名</label>
                                         <div class="col-lg-6">
-                                            <input readonly="readonly" class=" form-control" id="id" name="name" minlength="2" type="text" value="22娘" >
+                                            <input readonly="readonly" class=" form-control" id="id" name="name" minlength="2" type="text" value="${sessionScope.user.name}" >
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cemail" class="control-label col-lg-3">邮箱</label>
                                         <div class="col-lg-6">
-                                            <input   class="form-control " id="cemail" type="email" name="email" value="123@qq.com" >
+                                            <input   class="form-control " id="cemail" type="email" name="email" value="${sessionScope.user.email}" >
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="ccomment" class="control-label col-lg-3">签名</label>
                                         <div class="col-lg-6">
-                                            <textarea   class="form-control " id="ccomment" name="comment">wrng</textarea>
+                                            <textarea   class="form-control " id="ccomment" name="comment">${sessionScope.user.des}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -322,13 +327,13 @@
     </section>
     <!--main content end-->
 </section>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
+<script src="<%=bashPath%>/jsp/user/js/bootstrap.js"></script>
+<script src="<%=bashPath%>/jsp/user/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="<%=bashPath%>/jsp/user/js/scripts.js"></script>
+<script src="<%=bashPath%>/jsp/user/js/jquery.slimscroll.js"></script>
+<script src="<%=bashPath%>/jsp/user/js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/jquery.scrollTo.js"></script>
+<script src="<%=bashPath%>/jsp/user/js/jquery.scrollTo.js"></script>
 <!-- morris JavaScript -->
 <script>
     $(document).ready(function() {
@@ -386,7 +391,7 @@
     });
 </script>
 <!-- calendar -->
-<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript" src="<%=bashPath%>/jsp/user/js/monthly.js"></script>
 <script type="text/javascript">
     $(window).load( function() {
 
