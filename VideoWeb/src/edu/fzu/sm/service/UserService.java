@@ -1,6 +1,7 @@
 package edu.fzu.sm.service;
 
 import com.mysql.jdbc.TimeUtil;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.fzu.sm.CONST;
 import edu.fzu.sm.dao.UserDao;
 import edu.fzu.sm.entity.User;
@@ -110,5 +111,48 @@ public class UserService {
         }
 
         return userDao.update(user, new String[]{"state"});
+    }
+
+    /**
+     * 根据内容模糊查询
+     */
+    public List<User> queryBySel(String nickname,int page) {
+        String sql = null;
+
+        sql = "select * from user where state!=? and ( nickname like ? or nickname like ? or nickname like ?)  ";
+
+        return userDao.queryRowsPage(sql,
+                new Object[]{CONST.ADMIN,
+                        "%" + nickname,
+                        nickname + "%",
+                        "%" + nickname + "%",
+                }, page, 20);
+
+    }
+
+    /**
+     * 密码是否正确
+     */
+    public Boolean isRight(User user)
+    {
+        String sql="select count(1) from user where name=? and pwd=?";
+       return userDao.queryNum(sql,new Object[]{user.getName(),user.getPwd()})==1?true:false;
+    }
+    /**
+     * 更新密码
+     */
+    public int updatePwd(User user)
+    {
+        return userDao.update(user,new String[]{"Pwd"});
+    }
+    /**
+     * 更改头像
+     */
+    public int updatePhoto(String name,String path)
+    {
+        User user=new User();
+        user.setName(name);
+        user.setPhoto(path);
+        return userDao.update(user,new String[]{"Photo"});
     }
 }

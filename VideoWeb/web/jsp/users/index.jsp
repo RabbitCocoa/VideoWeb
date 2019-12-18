@@ -6,10 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     //取得项目路径
     String bashPath=request.getContextPath();
-    //当前文件目录
     String dirPath="jsp/users";
 %>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="#" class="logo">
+            <a href="<%=bashPath%>/index.jsp" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">
@@ -62,13 +62,14 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="../image2/10.jpg">
-                        <span class="username">John Doe</span>
+                        <img alt="缓存等待.." src="<%=bashPath%>/${sessionScope.user.photo}">
+                        <span class="username">${sessionScope.user.nickname}</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="userSetting.jsp"><i class="fa fa-cog"></i> 修改密码</a></li>
-                        <li><a href="../../login.jsp"><i class="fa fa-key"></i> 注销</a></li>
+
+                        <li><a href="<%=bashPath%>/<%=dirPath%>/Update.jsp"><i class="fa fa-cog"></i>修改密码</a></li>
+                        <li><a href="<%=bashPath%>/LogoutServlet"><i class="fa fa-key"></i> 注销</a></li>
                     </ul>
                 </li>
                 <!-- user login dropdown end -->
@@ -84,7 +85,7 @@
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="userInfo.jsp">
+                        <a class="active" href="<%=bashPath%>/UserInfoServlet">
                             <i class="fa fa-dashboard"></i>
                             <span>个人信息</span>
                         </a>
@@ -96,8 +97,8 @@
                             <span>我的视频</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="userPassedVideo.jsp">已发布视频</a></li>
-                            <li><a href="userVideo.jsp">待审核列表</a></li>
+                            <li><a href="<%=bashPath%>/MyVideoServlet">已发布视频</a></li>
+                            <li><a href="<%=bashPath%>/MyExamineServlet">待审核列表</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -106,7 +107,7 @@
                             <span>我要投稿</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="userContribute.jsp">视频投稿</a></li>
+                            <li><a href="<%=bashPath%>/<%=dirPath%>/Contribute.jsp">视频投稿</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -115,11 +116,12 @@
                             <span>我的收藏</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="userHistory.jsp">历史记录</a></li>
-                            <li><a href="userCollection.jsp">收藏夹</a></li>
+                            <li><a href="<%=bashPath%>/VHistoryServlet">历史记录</a></li>
+                            <li><a href="<%=bashPath%>/VHistoryServlet">收藏夹</a></li>
                         </ul>
                     </li>
-                </ul>            </div>
+                </ul>
+            </div>
             <!-- sidebar menu end-->
         </div>
     </aside>
@@ -128,18 +130,202 @@
     <section id="main-content">
         <section class="wrapper">
 
+            <!-- //market-->
+            <div class="market-updates">
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-2">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-eye"> </i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>视频观看量</h4>
+                            <h3>${videoflows}</h3>
+                            <p>今日新增:${todayvideoflows}</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-1">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-toggle-right" ></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>已发布视频</h4>
+                            <h3>${videonums}</h3>
+                            <p>今日新增:${todayvideonums}</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-3">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>视频收藏量</h4>
+                            <h3>${videocollects}</h3>
+                            <p>今日新增:${todayvideocollects} </p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-3 market-update-gd">
+                    <div class="market-update-block clr-block-4">
+                        <div class="col-md-4 market-update-right">
+                            <i class="fa fa-thumbs-o-up" ></i>
+
+                        </div>
+                        <div class="col-md-8 market-update-left">
+                            <h4>收到的赞</h4>
+                            <h3>${zans}</h3>
+                            <p>今日新增:${todayzans}</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <!-- //market-->
+            <!-- //tasks -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            个人信息
+                            <span class="tools pull-right">
+                                <a class="fa fa-chevron-down" href="javascript:;"></a>
+                             </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class=" form">
+                                <form class="cmxform form-horizontal "  id="commentForm" method="post" action="<%=bashPath%>/updateUserinfoServlet" novalidate="novalidate">
+                                    <div class="form-group ">
+                                        <label for="cname" class="control-label col-lg-3">昵称</label>
+                                        <div class="col-lg-6">
+                                            <input  class=" form-control" id="cname" name="Nickname" minlength="2" type="text" value="${sessionScope.user.nickname}" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="cname" class="control-label col-lg-3">用户名</label>
+                                        <div class="col-lg-6">
+                                            <input readonly="readonly" class=" form-control" id="id" name="Name" minlength="2" type="text" value="${sessionScope.user.name}" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="cemail" class="control-label col-lg-3">邮箱</label>
+                                        <div class="col-lg-6">
+                                            <input   class="form-control " id="cemail" type="email" name="Email" value="${sessionScope.user.email}" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="ccomment" class="control-label col-lg-3">签名</label>
+                                        <div class="col-lg-6">
+                                            <textarea   class="form-control " id="ccomment" name="Des">${sessionScope.user.des}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-offset-3 col-lg-6">
+                                            <button class="btn btn-primary"  type="submit">保存</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+            <div class="agileits-w3layouts-stats">
+
+                <div class="col-md-4 stats-info widget">
+                    <div class="stats-info-agileits">
+                        <div class="stats-title">
+                            <h4 class="title">投稿比例</h4>
+                        </div>
+                        <div class="stats-body">
+                            <ul class="list-unstyled">
+                                <li>动画 <span class="pull-right">${canimation}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar green" style="width:${canimation}%;"></div>
+                                    </div>
+                                </li>
+                                <li>音乐 <span class="pull-right">${cmusic}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar yellow" style="width:${cmusic}%;"></div>
+                                    </div>
+                                </li>
+                                <li>游戏 <span class="pull-right">${cgame}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar red" style="width:${cgame}%;"></div>
+                                    </div>
+                                </li>
+                                <li>番剧 <span class="pull-right">${ccartoon}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar blue" style="width:${ccartoon}%;"></div>
+                                    </div>
+                                </li>
+                                <li>影视 <span class="pull-right">${cmovie}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar light-blue" style="width:${cmovie}%;"></div>
+                                    </div>
+                                </li>
+                                <li class="last">美食 <span class="pull-right">${cfood}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar orange" style="width:${cfood}%;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8 stats-info stats-last widget-shadow">
+                    <div class="stats-last-agile">
+                        <table class="table stats-table ">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>标题</th>
+                                <th>状态</th>
+                                <th>封面</th>
+                                <th>点赞</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <c:forEach items="${movelist}" var="move" varStatus="v">
+                            <tr>
+                                <th scope="row">${v.index+1}</th>
+                                <td>${move.title}</td>
+                                <td><span class="label label-success">${move.state}</span></td>
+                                <td><h5 class="down"><img src="<%=bashPath%>/${move.psrc}" width="200px"></h5></td>
+                                <td>${move.zan}</td>
+                            </tr>
+                            </c:forEach>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
 
     </section>
     <!--main content end-->
 </section>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/bootstrap.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/scripts.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/jquery.slimscroll.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/jquery.scrollTo.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/jquery.scrollTo.js"></script>
 <!-- morris JavaScript -->
 <script>
     $(document).ready(function() {
@@ -197,7 +383,7 @@
     });
 </script>
 <!-- calendar -->
-<script type="text/javascript" src="js/monthly.js"></script>
+<script type="text/javascript" src="<%=bashPath%>/<%=dirPath%>/js/monthly.js"></script>
 <script type="text/javascript">
     $(window).load( function() {
 

@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         if (user != null) {
             int result = userService.LoginTest(user.getName(), user.getPwd());
             if (result != 0) {
-                //获取用户的全部信息
+                ///获取用户的全部信息
                 user = userService.getAUser(user.getName());
                 //放入session中
                 req.getSession().setAttribute("user", user);

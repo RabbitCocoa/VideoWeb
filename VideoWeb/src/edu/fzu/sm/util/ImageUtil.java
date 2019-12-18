@@ -31,7 +31,7 @@ public class ImageUtil extends JFrame {
         g.drawImage(icon.getImage(), 0, 0, null);
 
         Image scaledImage = bi.getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        bi = new BufferedImage(wid, hei, BufferedImage.TYPE_INT_RGB);
+        bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
          g = bi.getGraphics();
         //将图像复制到缓冲区处理 避免损坏
         g.drawImage(scaledImage ,0, 0, null);
@@ -55,9 +55,9 @@ public class ImageUtil extends JFrame {
 
         Image image = bi.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 
-        bi = new BufferedImage(wid, hei, BufferedImage.TYPE_INT_RGB);
+        bi = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         g = bi.createGraphics();
-        bi = g.getDeviceConfiguration().createCompatibleImage(wid, hei, Transparency.TRANSLUCENT);
+        bi = g.getDeviceConfiguration().createCompatibleImage(width, height, Transparency.TRANSLUCENT);
         g.dispose();
         g = bi.createGraphics();
         g.drawImage(image, 0, 0, null);

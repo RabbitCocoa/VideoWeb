@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -49,6 +49,11 @@
     <script src="<%=bashPath%>/<%=dirPath%>/js/morris.js"></script>
 
     <script type="text/javascript">
+        /**
+         * 封禁/解封 用户
+         * @param 选中的用户
+         * @param 当前状态
+         */
         function banUser(name, state) {
             if (state == '正常') {
                 if (confirm("确认封禁该用户吗")) {
@@ -84,6 +89,15 @@
             }
         }
 
+        /**
+         * 搜索
+         * @constructor
+         */
+        function Search() {
+            var $nk=$("#Nickname").val();
+            window.location.href = "<%=bashPath%>/UserListServlet?page=${page}&Nickname="+$nk;
+        }
+
     </script>
 </head>
 <body>
@@ -109,13 +123,13 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="暂无信息" src="${sessionScope.user.photo}">
+                        <img alt="暂无信息" src="<%=bashPath%>/${sessionScope.user.photo}">
                         <span class="username">${sessionScope.user.name}</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="<%=bashPath%>/UpdatePwdServlet?name=${sessionScope.user.name}"><i
-                                class="fa fa-cog"></i> 修改密码</a></li>
+                        <li><a href="<%=bashPath%>/jsp/backs/Update.jsp"><i class="fa fa-cog"></i> 修改密码</a></li>
+
                         <li><a href="<%=bashPath%>/LogoutServlet"><i class="fa fa-key"></i> 注销</a></li>
                     </ul>
                 </li>
@@ -174,26 +188,16 @@
                     </div>
                     <div class="row w3-res-tb">
                         <div class="col-sm-5 m-b-xs">
-                            <select class="input-sm form-control w-sm inline v-middle">
-                                <option value="0">全部</option>
-                                <option value="1">动画</option>
-                                <option value="2">番剧</option>
-                                <option value="3">音乐</option>
-                                <option value="4">游戏</option>
-                                <option value="5">追番</option>
-                                <option value="6">影视</option>
-                                <option value="7">美食</option>
-                                <option value="8">其他</option>
-                            </select>
-                            <button class="btn btn-sm btn-default">应用</button>
+
+
                         </div>
                         <div class="col-sm-4">
                         </div>
                         <div class="col-sm-3">
                             <div class="input-group">
-                                <input type="text" class="input-sm form-control" placeholder="Search">
+                                <input type="text" id="Nickname" class="input-sm form-control" placeholder="Search">
                                 <span class="input-group-btn">
-            <button class="btn btn-sm btn-default" type="button">搜索</button>
+            <button class="btn btn-sm btn-default" onclick="Search()"   type="button">搜索</button>
           </span>
                             </div>
                         </div>
@@ -255,10 +259,10 @@
                             </div>
                             <div class="col-sm-7 text-right text-center-xs">
                                 <ul class="pagination pagination-sm m-t-none m-b-none">
-                                    <li><a href="/UserListServlet?page=${page-1}"><i class="fa fa-chevron-left"></i></a>
+                                    <li><a href="<%=bashPath%>/UserListServlet?page=${page-1}"><i class="fa fa-chevron-left"></i></a>
                                     </li>
                                     <li><a href="">${page}</a></li>
-                                    <li><a href="/UserListServlet?page=${page+1}"><i
+                                    <li><a href="<%=bashPath%>/UserListServlet?page=${page+1}"><i
                                             class="fa fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>

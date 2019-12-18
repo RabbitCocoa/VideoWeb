@@ -1,5 +1,6 @@
 package edu.fzu.sm.servlet;
 
+import edu.fzu.sm.CONST;
 import edu.fzu.sm.dao.UserDao;
 import edu.fzu.sm.entity.User;
 import edu.fzu.sm.service.UserService;
@@ -25,8 +26,14 @@ public class UserListServlet  extends HttpServlet {
          * 获取页数
          */
         String page=req.getParameter("page");
+        String nickname=req.getParameter("Nickname");
+
+        if(nickname==null)
+        {
+            nickname="";
+        }
         int cPage;
-        if(page==null||page.equals(""))
+        if(page==null||page.equals("")||Integer.parseInt(page)<1)
         {
             cPage=1;
         }
@@ -35,7 +42,18 @@ public class UserListServlet  extends HttpServlet {
         }
 
 
-        List<User> list=service.listAllUserByPage(cPage);
+
+        List<User> list=service.queryBySel(nickname,cPage);
+        if(list==null||list.size()==0)
+        {
+            /**
+             * 如果第下一页没有数据 则返回上一页
+             */
+            if(cPage>1) {
+                cPage = cPage - 1;
+                list = service.queryBySel(nickname, cPage);
+            }
+        }
         req.setAttribute("userlist",list);
         req.setAttribute("page",cPage);
 

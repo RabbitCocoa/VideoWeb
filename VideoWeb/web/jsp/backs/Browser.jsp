@@ -62,12 +62,12 @@
                 <!-- user login dropdown start-->
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="暂无信息" src="${sessionScope.user.photo}">
+                        <img alt="暂无信息" src="<%=bashPath%>/${sessionScope.user.photo}">
                         <span class="username">${sessionScope.user.name}</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu extended logout">
-                        <li><a href="<%=bashPath%>/UpdatePwdServlet?name=${sessionScope.user.name}"><i class="fa fa-cog"></i> 修改密码</a></li>
+                        <li><a href="<%=bashPath%>/jsp/backs/Update.jsp"><i class="fa fa-cog"></i> 修改密码</a></li>
                         <li><a href="<%=bashPath%>/LogoutServlet"><i class="fa fa-key"></i> 注销</a></li>
                     </ul>
                 </li>

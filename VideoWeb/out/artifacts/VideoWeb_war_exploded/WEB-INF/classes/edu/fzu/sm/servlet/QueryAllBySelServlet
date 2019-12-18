@@ -1,0 +1,29 @@
+package edu.fzu.sm.servlet;
+
+import edu.fzu.sm.entity.User;
+import edu.fzu.sm.service.UserService;
+import edu.fzu.sm.util.PublicUtil;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/QueryAllBySelServlet")
+
+public class QueryAllBySelServlet extends HttpServlet {
+    private UserService userService=new UserService();
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       User user= (User) PublicUtil.getUserFromForm(User.class,req,new String[]{"Nickname","State"});
+
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req,resp);
+    }
+}

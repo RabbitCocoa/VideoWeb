@@ -36,18 +36,17 @@
             "<%=bashPath%>RegisterServlet",
             "Name="+$name+"&Pwd="+$pwd+"&Email="+$email,
             function (result) {
-                if(result=="success"){
+                 alert(result);
+
+                if(result == 'success'){
                     alert("注册成功");
                     window.location.href="<%=bashPath%>login.jsp"
                 }
-                else if(result=="same")
+                else if(result=='same')
                 {
                     alert("用户名已存在");
                 }
-                else if(result=="ban")
-                {
-                    alert("该账号已被冻结");
-                }
+
                 else{
                     alert("注册失败,请重试");
                 }
@@ -72,7 +71,11 @@
                     {
                         window.location.href="<%=bashPath%>UserInfoServlet"
                     }
-
+                    else if(result=='ban')
+                    {
+                        alert("该账号已被冻结");
+                        window.location.href="<%=bashPath%>login.jsp"
+                    }
                     else{
                         alert("用户名或密码错误");
                         window.location.href="<%=bashPath%>login.jsp"

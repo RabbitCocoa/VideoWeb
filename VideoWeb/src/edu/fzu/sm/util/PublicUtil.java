@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class PublicUtil {
     /**
@@ -82,6 +83,8 @@ public class PublicUtil {
         }
     }
 
-
+    /**
+     * 模板条件查询
+     */
 
 }

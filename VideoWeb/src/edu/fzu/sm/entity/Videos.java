@@ -9,7 +9,16 @@ public class Videos {
     private String dec;
     private String autor;
     private String createtime;
-    private Integer state;
+    private String state;
+    private int zan;
+
+    public int getZan() {
+        return zan;
+    }
+
+    public void setZan(int zan) {
+        this.zan = zan;
+    }
 
     public String getVid() {
         return vid;
@@ -75,11 +84,11 @@ public class Videos {
         this.createtime = createtime;
     }
 
-    public Integer getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(Integer state) {
+    public void setState(String state) {
         this.state = state;
     }
 }

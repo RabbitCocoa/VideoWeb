@@ -43,6 +43,7 @@ public class UserDao {
         return (List<User>)MysqlQuery.query.queryRows(sql,User.class,new Object[]{CONST.NORMAL});
     }
 
+
     /**
      * 分页查询用户
      */
@@ -51,6 +52,10 @@ public class UserDao {
         String sql="select * from user where state!=? order by CreateTime ";
         return (List<User>)MysqlQuery.query.queryPagenate(sql,User.class,new Object[]{CONST.ADMIN},page,20);
     }
+
+
+
+
     /**
      * 插入一条数据
      * 自动填补时间、状态、昵称、头像 (已改为在服务层填补,此处仅插入数据)
@@ -103,6 +108,37 @@ public class UserDao {
         return (List<User>)MysqlQuery.query.queryRows(sql,User.class,new Object[]{CONST.NORMAL, PublicUtil.getCurrentTimeStr()});
     }
 
+
+    /**
+     * 分页查询多行
+     */
+    public List<User> queryRowsPage(String sql,Object[] obj,int page,int size)
+    {
+        return MysqlQuery.query.queryPagenate(sql,User.class,obj,page,size);
+    }
+
+    /**
+     * 查询多行
+     */
+    public List<User> queryRows(String sql,Object[] obj)
+    {
+        return MysqlQuery.query.queryRows(sql,User.class,obj);
+    }
+
+    /**
+     * 查询数值
+     */
+    public int queryNum(String sql,Object[] obj)
+    {
+        return  MysqlQuery.query.queryNumber(sql,obj).intValue();
+    }
+    /**
+     * 查询某个数据
+     */
+    public Object queryValue(String sql,Object[] obj)
+    {
+        return MysqlQuery.query.queryValue(sql,obj);
+    }
 
 
 }
