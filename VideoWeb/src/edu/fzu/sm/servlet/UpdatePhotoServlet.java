@@ -25,7 +25,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @WebServlet("/UpdatePhotoServlet")
-public class UpdatePhotoServlet extends HttpServlet {
+public class    UpdatePhotoServlet extends HttpServlet {
     private UserService service = new UserService();
 
     @Override
@@ -33,6 +33,11 @@ public class UpdatePhotoServlet extends HttpServlet {
         /**
          * 接收上传文件，保存文件，改变用户头像地址
          */
+        /*编码处理*/
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html; charset=UTF-8");
+
         User user = (User) req.getSession().getAttribute("user");
 
         //上传

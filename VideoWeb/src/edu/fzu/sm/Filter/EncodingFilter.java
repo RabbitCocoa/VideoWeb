@@ -30,6 +30,7 @@ public class EncodingFilter implements Filter {
 
         request.setCharacterEncoding(encoding);
         response.setCharacterEncoding(encoding);
+        response.setContentType("text/html;charset="+encoding);
         filterChain.doFilter(request,response);
     }
 }

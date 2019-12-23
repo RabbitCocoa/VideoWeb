@@ -1,10 +1,11 @@
-<%--
+<%@ page import="edu.fzu.sm.CONST" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/12/13
   Time: 19:52
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     //取得项目路径
@@ -12,7 +13,6 @@
     //当前文件目录
     String dirPath="jsp/backs";
 %>
-<!DOCTYPE html>
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,13 +38,76 @@
     <script src="<%=bashPath%>/<%=dirPath%>/js/jquery2.0.3.min.js"></script>
     <script src="<%=bashPath%>/<%=dirPath%>/js/raphael-min.js"></script>
     <script src="<%=bashPath%>/<%=dirPath%>/js/morris.js"></script>
+
+    <script type="text/javascript">
+        function Search(page) {
+
+            var $area=$("#Area").val();
+            var $title=$("#Title").val();
+
+            window.location.href = "<%=bashPath%>/VideosListServlet?page="+page+"&Area="+$area+"&Title="+$title;
+        }
+
+        function del(vid) {
+            var $area=$("#Area").val();
+            var $title=$("#Title").val();
+            if (confirm('确认该视频应该被驳回吗？')) {
+               $.post(
+                   "<%=bashPath%>/ExamineFailedServlet",
+                   "vid="+vid,
+                   function (result) {
+                        if(result == 'success')
+                        {
+                            alert("已驳回该视频");
+                            window.location.href = "<%=bashPath%>/VideosListServlet?page=${page}"+"&Area="+$area+"&Title="+$title;
+
+                        }
+                        else{
+                            alert("操作失败");
+                        }
+
+                   },"text"
+
+               )
+            }
+        }
+        function pass(vid) {
+            var $area=$("#Area").val();
+            var $title=$("#Title").val();
+            if (confirm('确认该视频符合审核标准吗？')) {
+                $.post(
+                    "<%=bashPath%>/ExamineServlet",
+                    "vid="+vid,
+                    function (result) {
+                        if(result == 'success')
+                        {
+                            alert("审批成功");
+                            window.location.href = "<%=bashPath%>/VideosListServlet?page=${page}"+"&Area="+$area+"&Title="+$title;
+                        }
+                        else{
+                            alert("操作失败");
+                        }
+
+                    },"text"
+
+                )
+            }
+        }
+
+        function goLook(vid) {
+
+            window.location.href = "<%=bashPath%>/ToShowVideoServlet?vid="+vid;
+
+        }
+
+    </script>
 </head>
 <body>
 <section id="container">
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="#" class="logo">
+            <a href="<%=bashPath%>//VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">
@@ -120,8 +183,107 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
+            <div class="table-agile-info">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        作品一览
+                    </div>
+                    <div class="row w3-res-tb">
+                        <div class="col-sm-5 m-b-xs">
+                            <select name="Area" id="Area"  class="input-sm form-control w-sm inline v-middle">
+                                <option value="<%=CONST.AREA_ALL%>" ><%=CONST.AREA_ALL%></option>
+                                <c:forEach items="<%=CONST.AREAS%>" var="area">
+                                    <option value="${area}">${area}</option>
+                                </c:forEach>
+                            </select>
 
+                            <button class="btn btn-sm btn-default" onclick="Search(${page})">应用</button>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <input type="text" name="Title"  id="Title" class="input-sm form-control" placeholder="Search">
+                                <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" onclick="Search(${page})" type="button">搜索</button>
+          </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="table-responsive">
+                        <table class="table table-striped b-t b-light">
+                            <thead>
+                            <tr>
+                                <th style="width:20px;">
+                                    <label class="i-checks m-b-none">
+                                        <input type="checkbox"><i></i>
+                                    </label>
+                                </th>
+                                <th>标题</th>
+                                <th>封面</th>
+                                <th>分区</th>
+                                <th>状态</th>
+                                <th>点赞</th>
+                                <th>收藏</th>
+                                <th>播放量</th>
+                                <th>投稿时间</th>
+                                <th style="width:30px;"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${videolist}" var="video">
+                                <tr>
+                                    <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
+                                    <td>${video.title}</td>
+                                    <td><a href="#"><span class="text-ellipsis"><img  onclick="goLook('${video.vid}')" src="<%=bashPath%>/${video.psrc}" width="200" height="150"></span></a></td>
+                                    <td>${video.area}</td>
+                                    <c:if test="${video.state eq '审核中'}">
+                                        <td><span class="label label-danger">${video.state}</span></td>
+                                    </c:if>
+                                    <c:if test="${video.state eq '已发布'}">
+                                        <td><span class="label label-success">${video.state}</span></td>
+                                    </c:if>
+                                    <c:if test="${video.state eq '未过审'}">
+                                        <td><span class="label label-danger">${video.state}</span></td>
+                                    </c:if>
+                                    <td>${video.zan}</td>
+                                    <td>${video.bcollect}</td>
+                                    <td>${video.totalplay}</td>
+                                    <td><span class="text-ellipsis">${video.createtime}</span></td>
+                                    <td>
+                                        <button type="button" onclick="pass('${video.vid}')" style="border: none; background:transparent;" ><i class="fa fa-check text-danger text"></i></button>
+                                    </td>
+                                    <td>
+                                        <button type="button" onclick="del('${video.vid}')" style="border: none; background:transparent;" ><i class="fa fa-times text-danger text"></i></button>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <footer class="panel-footer">
+                        <div class="row">
+
+                            <div class="col-sm-5 text-center">
+                                <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                            </div>
+                            <div class="col-sm-7 text-right text-center-xs">
+                                <ul class="pagination pagination-sm m-t-none m-b-none">
+                                    <li><a onclick="Search(${page}-1)"><i class="fa fa-chevron-left"></i></a></li>
+                                    <li><a href="">${page}</a></li>
+                                    <li><a onclick="Search(${page}+1)"><i class="fa fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
         </section>
+
+
 
     </section>
     <!--main content end-->

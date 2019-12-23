@@ -14,7 +14,6 @@
     //当前文件目录
     String dirPath = "jsp/backs";
 %>
-<!DOCTYPE html>
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,7 +104,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="#" class="logo">
+            <a href="<%=bashPath%>//VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">

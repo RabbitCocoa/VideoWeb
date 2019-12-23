@@ -65,15 +65,15 @@
 						// 类型  字符串标识
 						type: '0',
 						// 类型  展示效果标识
-						name: '标清'
+						name: 'SD'
 					},
 					{
 						type: '1',
-						name: '高清'
+						name: 'HD'
 					},
 					{
 						type: '2',
-						name: '超清'
+						name: 'FHD'
 					}
 				]
 			},
@@ -484,7 +484,7 @@
 		},
 
 		showLoading: function (bool, text) {
-			var text = text || '视频加载中,请稍等  或者切换稍低的清晰度'
+			var text =  'Loading,waiting.........'
 			if (bool) {
 				this.tipsInfo.innerText = text
 				this.tipsInfo.className = 'Dvideo-tips-info'

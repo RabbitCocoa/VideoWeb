@@ -6,13 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     //取得项目路径
     String bashPath=request.getContextPath();
     //当前文件目录
     String dirPath="jsp/backs";
 %>
-<!DOCTYPE html>
+
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +45,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="#" class="logo">
+            <a href="<%=bashPath%>//VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">
@@ -119,8 +120,39 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
+            <!-- gallery -->
+            <!-- gallery -->
+            <div class="gallery">
+                <h2 class="w3ls_head">视频一览</h2>
+                <div class="gallery-grids">
+
+                    <div class="gallery-top-grids">
+                        <c:forEach items="${videolist}" var="video">
+                            <div class="col-sm-4 gallery-grids-left">
+                                <div class="gallery-grid">
+                                    <a class="example-image-link" href="<%=bashPath%>/ToShowVideoServlet?vid=${video.vid}" data-lightbox="example-set" data-title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae cursus ligula">
+                                        <img src="<%=bashPath%>/${video.psrc}" alt="该视频不存在" />
+                                        <div class="captn">
+                                            <h4>${video.title}</h4>
+                                            <p>${video.autor}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </c:forEach>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                    <script src="<%=bashPath%>/<%=dirPath%>/js/lightbox-plus-jquery.min.js"> </script>
+
+                </div>
+            </div>
+            <!-- //gallery -->
 
         </section>
+
 
     </section>
     <!--main content end-->
@@ -130,7 +162,7 @@
 <script src="<%=bashPath%>/<%=dirPath%>/js/scripts.js"></script>
 <script src="<%=bashPath%>/<%=dirPath%>/js/jquery.slimscroll.js"></script>
 <script src="<%=bashPath%>/<%=dirPath%>/js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="<%=bashPath%>/<%=dirPath%>/js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="<%=bashPath%>/<%=dirPath%>/js/jquery.scrollTo.js"></script>
 <!-- morris JavaScript -->
 <script>

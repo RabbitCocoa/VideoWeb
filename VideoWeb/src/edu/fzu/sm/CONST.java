@@ -29,4 +29,20 @@ public class CONST {
            AREA_ANIMATION,AREA_CARTOON,AREA_MUSIC, AREA_GAME,AREA_MOVE,AREA_FOOD,AREA_OHTER
     };
 
+    /**
+     * 视频状态常量
+     */
+    public static String VIDEO_SUCCESS="已发布";
+    public static String VIDEO_EXAMINE="审核中";
+    public static String VIDEO_FAILED="未过审";
+
+    /**
+     * 点赞与收藏按钮状态
+     */
+    public  static String ZAN_YES="已点赞";
+    public  static String ZAN_NO="未点赞";
+
+    public static String COLLECT_YES="已收藏";
+    public static String COLLECT_NO="未收藏";
+
 }

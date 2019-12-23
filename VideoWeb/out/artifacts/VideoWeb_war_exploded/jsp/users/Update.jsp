@@ -32,7 +32,6 @@
     </script>
 </c:if>
 
-<!DOCTYPE html>
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,7 +98,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="<%=bashPath%>/index.jsp" class="logo">
+            <a href="<%=bashPath%>/VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">
@@ -152,8 +151,7 @@
                             <span>我的视频</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="<%=bashPath%>/MyVideoServlet">已发布视频</a></li>
-                            <li><a href="<%=bashPath%>/MyExamineServlet">待审核列表</a></li>
+                            <li><a href="<%=bashPath%>/MyVideoServlet">作品一览</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -172,7 +170,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="<%=bashPath%>/VHistoryServlet">历史记录</a></li>
-                            <li><a href="<%=bashPath%>/VHistoryServlet">收藏夹</a></li>
+                            <li><a href="<%=bashPath%>/VCollectServlet">收藏夹</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class PublicUtil {
     /**
@@ -86,5 +87,20 @@ public class PublicUtil {
     /**
      * 模板条件查询
      */
+
+    /**
+     * 生成20位随机整数
+     */
+    public static  String getU20()
+    {
+        StringBuilder builder=new StringBuilder();
+        Random random=new Random();
+        for(int i=0;i<20;i++)
+        {
+            builder.append(random.nextInt(10));
+        }
+        return  builder.toString();
+    }
+
 
 }

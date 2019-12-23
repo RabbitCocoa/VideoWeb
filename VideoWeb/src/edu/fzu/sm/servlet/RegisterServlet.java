@@ -1,9 +1,10 @@
 package edu.fzu.sm.servlet;
 
 
-import edu.fzu.sm.dao.UserDao;
+import edu.fzu.sm.entity.Groups;
 import edu.fzu.sm.entity.User;
 import edu.fzu.sm.service.UserService;
+import edu.fzu.sm.util.JDBCQuery.MysqlQuery;
 import edu.fzu.sm.util.PublicUtil;
 
 import javax.servlet.ServletException;
@@ -37,7 +38,21 @@ public class RegisterServlet extends HttpServlet {
         int result=service.RegisterUser(user);
         if(result==1)
         {
-            out.write("success");
+            /**
+             * 如果注册成功 添加一个默认的视频组
+             */
+            Groups group=new Groups();
+            group.setGname("默认");
+            group.setUid(user.getName());
+            group.setGid(PublicUtil.getU20());
+
+           if(MysqlQuery.query.insert(group)==1) {
+               out.write("success");
+           }
+           else{
+               MysqlQuery.query.delete(user);
+               out.write("failed");
+           }
         }
         }
         else{

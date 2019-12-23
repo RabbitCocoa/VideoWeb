@@ -1,4 +1,4 @@
-<%--
+<%@ page import="edu.fzu.sm.CONST" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/12/13
@@ -12,7 +12,30 @@
     String bashPath=request.getContextPath();
     String dirPath="jsp/users";
 %>
-<!DOCTYPE html>
+
+<c:if test="${msg eq 'failed'}">
+    <script>
+        alert("操作错误，请重试");
+    </script>
+</c:if>
+<c:if test="${msg eq 'success'}">
+    <script>
+        alert("上传成功，请等待审核哦~~~");
+    </script>
+</c:if>
+<c:if test="${msg eq 'videoerror'}">
+    <script>
+        alert("上传视频出错或名字过长，请重试");
+    </script>
+</c:if>
+
+<c:if test="${msg eq 'imgerror'}">
+    <script>
+        alert("图片出错或者名字过长，请重试");
+    </script>
+</c:if>
+
+
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +67,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="<%=bashPath%>/index.jsp" class="logo">
+            <a href="<%=bashPath%>/VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">
@@ -97,8 +120,7 @@
                             <span>我的视频</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="<%=bashPath%>/MyVideoServlet">已发布视频</a></li>
-                            <li><a href="<%=bashPath%>/MyExamineServlet">待审核列表</a></li>
+                            <li><a href="<%=bashPath%>/MyVideoServlet">作品一览</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -117,7 +139,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="<%=bashPath%>/VHistoryServlet">历史记录</a></li>
-                            <li><a href="<%=bashPath%>/VHistoryServlet">收藏夹</a></li>
+                            <li><a href="<%=bashPath%>/VCollectServlet">收藏夹</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -129,193 +151,56 @@
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        作品上传
+                    </header>
+                    <div class="panel-body">
+                        <div class="position-center">
+                            <form role="form" method="post"  action="<%=bashPath%>/ContributeVideoServlet" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">标题</label>
+                                    <input type="text" name="Title" class="form-control" id="exampleInputEmail1" placeholder="标题...">
+                                </div>
 
-            <!-- //market-->
-            <div class="market-updates">
-                <div class="col-md-3 market-update-gd">
-                    <div class="market-update-block clr-block-2">
-                        <div class="col-md-4 market-update-right">
-                            <i class="fa fa-eye"> </i>
-                        </div>
-                        <div class="col-md-8 market-update-left">
-                            <h4>视频观看量</h4>
-                            <h3>${videoflows}</h3>
-                            <p>今日新增:${todayvideoflows}</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <div class="col-md-3 market-update-gd">
-                    <div class="market-update-block clr-block-1">
-                        <div class="col-md-4 market-update-right">
-                            <i class="fa fa-toggle-right" ></i>
-                        </div>
-                        <div class="col-md-8 market-update-left">
-                            <h4>已发布视频</h4>
-                            <h3>${videonums}</h3>
-                            <p>今日新增:${todayvideonums}</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <div class="col-md-3 market-update-gd">
-                    <div class="market-update-block clr-block-3">
-                        <div class="col-md-4 market-update-right">
-                            <i class="fa fa-heart"></i>
-                        </div>
-                        <div class="col-md-8 market-update-left">
-                            <h4>视频收藏量</h4>
-                            <h3>${videocollects}</h3>
-                            <p>今日新增:${todayvideocollects} </p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <div class="col-md-3 market-update-gd">
-                    <div class="market-update-block clr-block-4">
-                        <div class="col-md-4 market-update-right">
-                            <i class="fa fa-thumbs-o-up" ></i>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">简介</label>
+                                    <input type="text" class="form-control" id="body" name="Dec" placeholder="简介...">
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="exampleInputFile">视频上传</label>
+                                    <input type="file" id="video" name="Video">
+                                    <p class="help-block">上传你的视频</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputFile">封面上传</label>
+                                    <input type="file" id="exampleInputFile" name="Cover">
+                                    <p class="help-block">选择你的视频封面</p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">分区</label>
+                                    <select class="form-control input-lg m-bot15" name="Area">
+                                        <c:forEach items="<%=CONST.AREAS%>" var="area">
+                                        <option value="${area}">${area}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-info">上传</button>
+
+
+                            </form>
                         </div>
-                        <div class="col-md-8 market-update-left">
-                            <h4>收到的赞</h4>
-                            <h3>${zans}</h3>
-                            <p>今日新增:${todayzans}</p>
-                        </div>
-                        <div class="clearfix"> </div>
+
                     </div>
-                </div>
-                <div class="clearfix"> </div>
+                </section>
+
             </div>
-            <!-- //market-->
-            <!-- //tasks -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <section class="panel">
-                        <header class="panel-heading">
-                            个人信息
-                            <span class="tools pull-right">
-                                <a class="fa fa-chevron-down" href="javascript:;"></a>
-                             </span>
-                        </header>
-                        <div class="panel-body">
-                            <div class=" form">
-                                <form class="cmxform form-horizontal "  id="commentForm" method="post" action="<%=bashPath%>/updateUserinfoServlet" novalidate="novalidate">
-                                    <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-3">昵称</label>
-                                        <div class="col-lg-6">
-                                            <input  class=" form-control" id="cname" name="Nickname" minlength="2" type="text" value="${sessionScope.user.nickname}" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-3">用户名</label>
-                                        <div class="col-lg-6">
-                                            <input readonly="readonly" class=" form-control" id="id" name="Name" minlength="2" type="text" value="${sessionScope.user.name}" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="cemail" class="control-label col-lg-3">邮箱</label>
-                                        <div class="col-lg-6">
-                                            <input   class="form-control " id="cemail" type="email" name="Email" value="${sessionScope.user.email}" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="ccomment" class="control-label col-lg-3">签名</label>
-                                        <div class="col-lg-6">
-                                            <textarea   class="form-control " id="ccomment" name="Des">${sessionScope.user.des}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-3 col-lg-6">
-                                            <button class="btn btn-primary"  type="submit">保存</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-                    </section>
-                </div>
-            </div>
-
-
-            <div class="agileits-w3layouts-stats">
-
-                <div class="col-md-4 stats-info widget">
-                    <div class="stats-info-agileits">
-                        <div class="stats-title">
-                            <h4 class="title">投稿比例</h4>
-                        </div>
-                        <div class="stats-body">
-                            <ul class="list-unstyled">
-                                <li>动画 <span class="pull-right">${canimation}%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar green" style="width:${canimation}%;"></div>
-                                    </div>
-                                </li>
-                                <li>音乐 <span class="pull-right">${cmusic}%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar yellow" style="width:${cmusic}%;"></div>
-                                    </div>
-                                </li>
-                                <li>游戏 <span class="pull-right">${cgame}%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar red" style="width:${cgame}%;"></div>
-                                    </div>
-                                </li>
-                                <li>番剧 <span class="pull-right">${ccartoon}%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar blue" style="width:${ccartoon}%;"></div>
-                                    </div>
-                                </li>
-                                <li>影视 <span class="pull-right">${cmovie}%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar light-blue" style="width:${cmovie}%;"></div>
-                                    </div>
-                                </li>
-                                <li class="last">美食 <span class="pull-right">${cfood}%</span>
-                                    <div class="progress progress-striped active progress-right">
-                                        <div class="bar orange" style="width:${cfood}%;"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-8 stats-info stats-last widget-shadow">
-                    <div class="stats-last-agile">
-                        <table class="table stats-table ">
-                            <thead>
-                            <tr>
-                                <th>序号</th>
-                                <th>标题</th>
-                                <th>状态</th>
-                                <th>封面</th>
-                                <th>点赞</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            <c:forEach items="${movelist}" var="move" varStatus="v">
-                                <tr>
-                                    <th scope="row">${v.index+1}</th>
-                                    <td>${move.title}</td>
-                                    <td><span class="label label-success">${move.state}</span></td>
-                                    <td><h5 class="down"><img src="<%=bashPath%>/${move.psrc}" width="200px"></h5></td>
-                                    <td>${move.zan}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-
-                        </table>
-                    </div>
-                </div>
-            </div>
-
 
         </section>
-
     </section>
     <!--main content end-->
 </section>

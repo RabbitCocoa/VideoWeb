@@ -40,7 +40,7 @@ public class UserDao {
     public List<User> queryAll()
     {
         String sql="select * from user where state!=? order by CreateTime ";
-        return (List<User>)MysqlQuery.query.queryRows(sql,User.class,new Object[]{CONST.NORMAL});
+        return (List<User>)MysqlQuery.query.queryRows(sql,User.class,new Object[]{CONST.ADMIN});
     }
 
 
@@ -105,7 +105,7 @@ public class UserDao {
     public List<User> getLoginToday()
     {
         String sql="select * from user where state!=? and createtime=? order by CreateTime ";
-        return (List<User>)MysqlQuery.query.queryRows(sql,User.class,new Object[]{CONST.NORMAL, PublicUtil.getCurrentTimeStr()});
+        return (List<User>)MysqlQuery.query.queryRows(sql,User.class,new Object[]{CONST.ADMIN, PublicUtil.getCurrentTimeStr()});
     }
 
 

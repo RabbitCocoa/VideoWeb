@@ -3,7 +3,7 @@
   User: Administrator
   Date: 2019/12/13
   Time: 19:52
-  To change this template use File | Settings | File Templates.
+  To change this template use F ile | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -12,7 +12,6 @@
     //当前文件目录
     String dirPath="jsp/backs";
 %>
-<!DOCTYPE html>
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +43,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="#" class="logo">
+            <a href="<%=bashPath%>//VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">

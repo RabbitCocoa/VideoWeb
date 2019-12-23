@@ -6,48 +6,295 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3075cce7-b861-4a97-bdb9-1f5b3faaa179" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+    <list default="true" id="3075cce7-b861-4a97-bdb9-1f5b3faaa179" name="Default Changelist" comment="&quot;临时保存下数据 目前进度到用户的信息更新&quot;">
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/Filter/LoginFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Collect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Flow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Groups.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Watch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Zan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/service/PublicService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/service/VideoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ContributeVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/DelVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ExamineFailedServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ExamineServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/MyVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ToShowVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/VCollectServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/VHistoryServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/VideoIndexServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/VideosListServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ZanServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/addCollectGroupServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/00104099449363407800_a833c7eda467a130f97f508a15b34597.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/00902503767699118690_small2422bf893cf8f61b3e3314c5a53545171568719614.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/02076981936674421825_4a9f9a833577b100e111d4eb78d615b4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/04066942795517132215_e81999978a1897e4375dd12c7b2f252b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/05404224055538013893_29a3e511df8aaf302af8a18624f2dd96.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/06004055728448996010_d571a9b252b68cfc0292a5b2ffa4620e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/12249688982583429405_rabbit1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/16062555769431602638_ab2913aa61cccde27958f9ef5cab10b9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/17584742691603319302_b5f6d7e765dfc8a70e9aed2783784203.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/17901961094809419486_ae7fda37e6108866834f163c7d67c95c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/20031077175992839418_small06427677a09c8e8e7aa8226a204b49d21558056342.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/21236426723184051751_d571a9b252b68cfc0292a5b2ffa4620e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/23174507443532036119_small4e3b73418a72771cd7d9dd744918d8c81555596537.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/25295321263875859267_562b13833627932e24d359a4a3aff333.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/27370505170365112441_7bd78bd4dc73840b1181c3221120908a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/27993508963519596777_0903120c47698c26425bbf2e451c050c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/29474578899750653684_562b13833627932e24d359a4a3aff333.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/33492103697702859049_981f1d66a05f7021f10e5d3b1ed9d8a0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/33544231884464322505_29a3e511df8aaf302af8a18624f2dd96.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/35740846093918908031_fdafcf5fe7ef277b7af4e59127a0fa78.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/37284420515732875112_d4df47f5aa2bf1b79da3519357fe71c2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/39790053103614744563_60b8cb261b1433057c53b8be3e6d274f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/41317491212598801002_rabbit2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/53114517177890939626_7bd78bd4dc73840b1181c3221120908a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/55055975154894473720_5c7b015142e7f7dc18f6272d53db5463.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/58859708952405338227_7d717755e60a96810ebb69a7d273d9ca.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/60446997489804980276_c044b7e72b514270ab54a6224c1cb251.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/65205041115358160761_rabbit7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/65855327220304562029_d571a9b252b68cfc0292a5b2ffa4620e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/75471384781896556396_rabbit10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/75501062899763233101_2c1eb4df689329f695b7cb27bfc77043.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/78116087184637553194_0da6149458eb0abcd8a6068602c8cfde.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/88053430571471902773_d1ef7bf1328e8e3a0a93d4f29e20ad31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/91047281078383004041_795ca67aecb2c3b361558b46b701b628.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/93435889987875603205_795ca67aecb2c3b361558b46b701b628.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/94382066972881054197_73d251025fa011b040211402c9c7ef13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/94598844586455383467_d416a3fd5d6aa67daa19e155c27c1d0d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/covers/96925785049153611735_封面1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/MyVideo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/VHistory.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/collect.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/07916339298322138169_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/08698470709759964977_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/12469128954581643309_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/13623585205745673750_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/24214519337461960124_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/26854997236612953765_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/27388150654219341240_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/27584957574287517073_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/29680761979918446122_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/36537277547911591563_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/36902591597011077220_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/36978203861125540878_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/37068748983501339337_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/38245150730525042258_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/39348467329365739358_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/41738863583024860763_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/42750365298532624846_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/43314147575498717944_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/47810340288000206930_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/53714420338846398958_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/56664461881042759341_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/56796514824624345863_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/57520606501981723864_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/57953785475891732567_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/59068141961728783717_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/65483089600476046678_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/70782044131323972898_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/73736888214214495181_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/76816858866836303299_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/80100083727444018096_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/81173559743202835063_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/81186072218019610551_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/82029238996707458143_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/85435479944241916905_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/94629333974304288831_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/96824687222284617331_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/videos/99016613445597009942_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/Filter/LoginFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Collect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Flow.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Groups.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Watch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Zan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/service/PublicService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/service/VideoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ContributeVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/DelVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ExamineFailedServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ExamineServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/MyVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ToShowVideoServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/VCollectServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/VHistoryServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/VideoIndexServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/VideosListServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ZanServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/addCollectGroupServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/Filter/LoginFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Collect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Flow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Groups.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Watch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Zan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/service/PublicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/service/VideoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ContributeVideoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/DelVideoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ExamineFailedServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ExamineServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/MyVideoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ToShowVideoServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/VCollectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/VHistoryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/VideoIndexServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/VideosListServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ZanServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/addCollectGroupServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/00104099449363407800_a833c7eda467a130f97f508a15b34597.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/00902503767699118690_small2422bf893cf8f61b3e3314c5a53545171568719614.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/02076981936674421825_4a9f9a833577b100e111d4eb78d615b4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/04066942795517132215_e81999978a1897e4375dd12c7b2f252b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/05404224055538013893_29a3e511df8aaf302af8a18624f2dd96.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/06004055728448996010_d571a9b252b68cfc0292a5b2ffa4620e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/12249688982583429405_rabbit1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/16062555769431602638_ab2913aa61cccde27958f9ef5cab10b9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/17584742691603319302_b5f6d7e765dfc8a70e9aed2783784203.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/17901961094809419486_ae7fda37e6108866834f163c7d67c95c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/20031077175992839418_small06427677a09c8e8e7aa8226a204b49d21558056342.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/21236426723184051751_d571a9b252b68cfc0292a5b2ffa4620e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/23174507443532036119_small4e3b73418a72771cd7d9dd744918d8c81555596537.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/25295321263875859267_562b13833627932e24d359a4a3aff333.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/27370505170365112441_7bd78bd4dc73840b1181c3221120908a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/27993508963519596777_0903120c47698c26425bbf2e451c050c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/29474578899750653684_562b13833627932e24d359a4a3aff333.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/33492103697702859049_981f1d66a05f7021f10e5d3b1ed9d8a0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/33544231884464322505_29a3e511df8aaf302af8a18624f2dd96.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/35740846093918908031_fdafcf5fe7ef277b7af4e59127a0fa78.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/37284420515732875112_d4df47f5aa2bf1b79da3519357fe71c2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/39790053103614744563_60b8cb261b1433057c53b8be3e6d274f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/41317491212598801002_rabbit2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/53114517177890939626_7bd78bd4dc73840b1181c3221120908a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/55055975154894473720_5c7b015142e7f7dc18f6272d53db5463.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/58859708952405338227_7d717755e60a96810ebb69a7d273d9ca.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/60446997489804980276_c044b7e72b514270ab54a6224c1cb251.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/65205041115358160761_rabbit7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/65855327220304562029_d571a9b252b68cfc0292a5b2ffa4620e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/75471384781896556396_rabbit10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/75501062899763233101_2c1eb4df689329f695b7cb27bfc77043.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/78116087184637553194_0da6149458eb0abcd8a6068602c8cfde.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/88053430571471902773_d1ef7bf1328e8e3a0a93d4f29e20ad31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/91047281078383004041_795ca67aecb2c3b361558b46b701b628.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/93435889987875603205_795ca67aecb2c3b361558b46b701b628.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/94382066972881054197_73d251025fa011b040211402c9c7ef13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/94598844586455383467_d416a3fd5d6aa67daa19e155c27c1d0d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/covers/96925785049153611735_封面1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsp/users/MyVideo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsp/users/VHistory.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsp/users/collect.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/07916339298322138169_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/08698470709759964977_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/12469128954581643309_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/13623585205745673750_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/24214519337461960124_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/26854997236612953765_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/27388150654219341240_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/27584957574287517073_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/29680761979918446122_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/36537277547911591563_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/36902591597011077220_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/36978203861125540878_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/37068748983501339337_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/38245150730525042258_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/39348467329365739358_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/41738863583024860763_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/42750365298532624846_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/43314147575498717944_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/47810340288000206930_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/53714420338846398958_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/56664461881042759341_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/56796514824624345863_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/57520606501981723864_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/57953785475891732567_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/59068141961728783717_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/65483089600476046678_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/70782044131323972898_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/73736888214214495181_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/76816858866836303299_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/80100083727444018096_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/81173559743202835063_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/81186072218019610551_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/82029238996707458143_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/85435479944241916905_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/94629333974304288831_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/96824687222284617331_demo.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/videos/99016613445597009942_demo.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VideoWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/VideoWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/CONST.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/CONST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/Filter/EncodingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/Filter/EncodingFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Videos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/entity/Videos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/UserListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/UserListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/BanUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/BanUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ManagerInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/ManagerInfoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/UpdatePhotoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/UpdatePhotoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/UserInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/UserInfoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/util/JDBCQuery/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/util/JDBCQuery/Query.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/util/PublicUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/util/PublicUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Browser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Browser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Examine.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Examine.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Userlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/Userlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/backs/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/user/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/user/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/Contribute.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/Contribute.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/Update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/Update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/users/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/browser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/browser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/js/Dvideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/js/Dvideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/showdetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/showdetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/jsp/video/video.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/CONST.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/CONST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/Filter/EncodingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/Filter/EncodingFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Videos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/entity/Videos.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/UserListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/UserListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/util/ImageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/util/ImageUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/BanUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/BanUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ManagerInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/ManagerInfoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/UpdatePhotoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/UpdatePhotoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/UserInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/UserInfoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/util/JDBCQuery/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/util/JDBCQuery/Query.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/util/PublicUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/util/PublicUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resource/db.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/CONST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/CONST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/Filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/Filter/EncodingFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Videos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/entity/Videos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UserListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UserListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/BanUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/BanUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ManagerInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/ManagerInfoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UpdatePhotoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UpdatePhotoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UpdatePwdServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UpdatePwdServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UserInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/UserInfoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/util/JDBCQuery/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/util/JDBCQuery/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/util/PublicUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/util/PublicUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/covers/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/backs/Browser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/backs/Browser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/backs/Examine.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/backs/Examine.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/backs/Update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/backs/Update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/backs/Userlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/backs/Userlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/backs/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/backs/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/users/Contribute.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/users/Contribute.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/users/Update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/users/Update.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/jsp/users/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/users/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/video/browser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/video/browser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/video/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/video/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/video/js/Dvideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/video/js/Dvideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/video/showdetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/video/showdetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jsp/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/jsp/video/video.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +316,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="VideoWeb" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -87,11 +337,14 @@
       </set>
     </option>
   </component>
+  <component name="JavaeeView">
+    <option name="showModules" value="false" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
@@ -121,7 +374,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/covers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/jsp/video/js" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15893386" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -136,20 +389,46 @@
       <recent name="D:\MVC\Web\VideoWeb\web\jsp\user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MVC\Web\VideoWeb\web\jsp\video\js" />
+      <recent name="D:\MVC\Web\VideoWeb\web\jsp\video" />
       <recent name="D:\MVC\Web\VideoWeb\web\covers" />
       <recent name="D:\MVC\Web\VideoWeb\web\jsp\users" />
       <recent name="D:\MVC\Web\VideoWeb\web\WEB-INF\lib" />
-      <recent name="D:\MVC\Web\VideoWeb\web\jsp" />
-      <recent name="D:\MVC\Web\VideoWeb\web\jsp\back" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.27">
+    <configuration name="PublicService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.fzu.sm.service.PublicService" />
+      <module name="VideoWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fzu.sm.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TimeUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.fzu.sm.util.TimeUtil" />
       <module name="VideoWeb" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.fzu.sm.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdatePwdServlet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.fzu.sm.servlet.UpdatePwdServlet" />
+      <module name="VideoWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fzu.sm.servlet.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -262,10 +541,14 @@
       <item itemvalue="Application.test" />
       <item itemvalue="Application.TimeUtil" />
       <item itemvalue="Application.UserDao" />
+      <item itemvalue="Application.PublicService" />
+      <item itemvalue="Application.UpdatePwdServlet" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PublicService" />
+        <item itemvalue="Application.UpdatePwdServlet" />
         <item itemvalue="Application.UserDao" />
         <item itemvalue="Application.TimeUtil" />
         <item itemvalue="Application.test" />
@@ -282,11 +565,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -314,7 +592,17 @@
       <workItem from="1576581485783" duration="19567000" />
       <workItem from="1576628167140" duration="10206000" />
       <workItem from="1576650492698" duration="11042000" />
-      <workItem from="1576668808789" duration="2875000" />
+      <workItem from="1576668808789" duration="12220000" />
+      <workItem from="1576716635584" duration="14978000" />
+      <workItem from="1576739802573" duration="7367000" />
+      <workItem from="1576820445210" duration="14413000" />
+      <workItem from="1576930709928" duration="21019000" />
+      <workItem from="1576974991668" duration="19114000" />
+      <workItem from="1577016976639" duration="8814000" />
+      <workItem from="1577063379721" duration="2398000" />
+      <workItem from="1577067892003" duration="3778000" />
+      <workItem from="1577081122472" duration="15126000" />
+      <workItem from="1577114817928" duration="967000" />
     </task>
     <task id="LOCAL-00001" summary="重构了前端的部分页面，完成了登陆、注册、后台控制台以及用户的查看与删除。新增了常量类，PublicUtil公共工具类，使用反射简化数据传输。">
       <created>1576603691720</created>
@@ -330,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576603848489</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;临时保存下数据 目前进度到用户的信息更新&quot;">
+      <created>1576672139335</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576672139335</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,29 +646,42 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="重构了前端的部分页面，完成了登陆、注册、后台控制台以及用户的查看与删除。新增了常量类，PublicUtil公共工具类，使用反射简化数据传输。" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构了前端的部分页面，完成了登陆、注册、后台控制台以及用户的查看与删除。新增了常量类，PublicUtil公共工具类，使用反射简化数据传输。" />
+    <MESSAGE value="&quot;临时保存下数据 目前进度到用户的信息更新&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;临时保存下数据 目前进度到用户的信息更新&quot;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576566451461">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576823720976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576566451461" />
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1576671492954">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576823720976" />
+    <state x="572" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576999161180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576671492954" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576551823177">
+    <state x="572" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1576999161180" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1577096012561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576551823177" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577096012561" />
+    <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576945986722">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576945986722" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576943654678">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576943654678" />
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1576332808710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576332808710" />
-    <state x="310" y="110" key="CommitChangelistDialog2" timestamp="1576603844966">
+    <state x="310" y="110" key="CommitChangelistDialog2" timestamp="1576823668726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="310" y="110" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576603844966" />
+    <state x="310" y="110" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1576823668726" />
+    <state width="422" height="466" key="DebuggerActiveHint" timestamp="1576937944968">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="422" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1576937944968" />
     <state x="184" y="86" key="DiffContextDialog" timestamp="1576603426031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -382,70 +690,70 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="634" y="260" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576636146159" />
-    <state width="1117" height="275" key="GridCell.Tab.0.bottom" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.0.bottom" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.0.center" timestamp="1576671931194">
+    <state width="1498" height="318" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.0.center" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931194" />
-    <state width="1117" height="275" key="GridCell.Tab.0.left" timestamp="1576671931194">
+    <state width="1498" height="318" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.0.left" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931194" />
-    <state width="1117" height="275" key="GridCell.Tab.0.right" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.0.right" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.1.bottom" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.1.bottom" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.1.center" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.1.center" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.1.left" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.1.left" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.1.right" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.1.right" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.2.bottom" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.2.bottom" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.2.center" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.2.center" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.2.left" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.2.left" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.2.right" timestamp="1576671931195">
+    <state width="1498" height="318" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.2.right" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576671931195" />
-    <state width="1117" height="275" key="GridCell.Tab.3.bottom" timestamp="1576671700659">
+    <state width="1498" height="318" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.3.bottom" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576671700659" />
-    <state width="1117" height="275" key="GridCell.Tab.3.center" timestamp="1576671700659">
+    <state width="1498" height="318" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.3.center" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576671700659" />
-    <state width="1117" height="275" key="GridCell.Tab.3.left" timestamp="1576671700659">
+    <state width="1498" height="318" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.3.left" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576671700659" />
-    <state width="1117" height="275" key="GridCell.Tab.3.right" timestamp="1576671700659">
+    <state width="1498" height="318" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
+    <state width="1498" height="318" key="GridCell.Tab.3.right" timestamp="1577098886351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1117" height="275" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576671700659" />
+    <state width="1498" height="318" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577098886351" />
     <state width="1292" height="274" key="GridCell.Tab.7.bottom" timestamp="1576491200032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -466,25 +774,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576636148452" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576603864128">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1577002690996">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1576603864128" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1576668808810">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577002690996" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1577114876980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576668808810" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1576553442168">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577114876980" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1576824955637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576553442168" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1576659845273">
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576824955637" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577096301805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576659845273" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577096301805" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="nPage" />
+      </configuration>
       <configuration name="Application">
         <watch expression="ti" />
         <watch expression="ti" language="JAVA" />

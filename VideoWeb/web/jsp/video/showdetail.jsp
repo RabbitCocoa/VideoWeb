@@ -9,18 +9,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     //取得项目路径
-    String bashPath=request.getContextPath()+"/jsp/video/";
+    String bashPath=request.getContextPath();
+    String dirPath="jsp/video";
 %>
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="assets/css/layui.css">
-    <link rel="stylesheet" href="assets/css/view.css"/>
+    <link rel="stylesheet" href="<%=bashPath%>/<%=dirPath%>/assets/css/layui.css">
+    <link rel="stylesheet" href="<%=bashPath%>/<%=dirPath%>/assets/css/view.css"/>
     <%--视频播放--%>
-    <link rel="stylesheet" href="css/Dvideo.css">
-    <link rel="stylesheet" href="font-icon/style.css">
+    <link rel="stylesheet" href="<%=bashPath%>/<%=dirPath%>/css/Dvideo.css">
+    <link rel="stylesheet" href="<%=bashPath%>/<%=dirPath%>/font-icon/style.css">
     <title></title>
 </head>
 <body class="layui-view-body">
@@ -43,37 +43,36 @@
     </div>
 </div>
 </div>
-<script src="assets/layui.all.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/assets/layui.all.js"></script>
 
 
-<script src="js/Dvideo.js"></script>
+<script src="<%=bashPath%>/<%=dirPath%>/js/Dvideo.js"></script>
 <script>
     // window.onload = function () {
     var videoWrap = document.getElementById('testVideo')
     var fullScreen = document.getElementById('getFullScreen')
     var video = new Dvideo ({
         ele: '#testVideo',
-        title: 'Pneumatic Tokyo - EnV',
+        title: '${Title}',
         nextVideoExtend: function () {
 
         },
         showNext: true,
         width: '800px',
         height: '600px',
-        src: '01.mp4',
-        autoplay: true,
+        src: '<%=bashPath%>/${vdosrc}',
+        autoplay: false,
         setVideoDefinition: function (type, e, current) {
             if (type === '0') {
 
-                video.setVideoInfo('標清360','01.mp4',current)
+                video.setVideoInfo('標清360','<%=bashPath%>/${vdosrc}',current)
             }
             if (type === '1') {
 
-                // video.setVideoInfo('高清720','这里填写视频的高清地址',current)
+                 video.setVideoInfo('高清720','<%=bashPath%>/${vdosrc}',current)
             }
             if (type === '2') {
-
-                // video.setVideoInfo('超清1080','这里填写视频的超清地址',current)
+                 video.setVideoInfo('超清1080','<%=bashPath%>/${vdosrc}',current)
             }
             video.showLoading(false)
 

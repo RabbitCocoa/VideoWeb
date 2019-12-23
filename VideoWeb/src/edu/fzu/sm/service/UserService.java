@@ -66,7 +66,7 @@ public class UserService {
         user.setDes("留下点什么吧....");
         user.setNickname("旅客");
         //默认头像
-        user.setPhoto(DBManager.getConf().getProjectName()+"/photos/Default"+(random.nextInt(2)+1)+".jpg");
+        user.setPhoto("photos/Default"+(random.nextInt(2)+1)+".jpg");
         //用户账号状态正常
         user.setState(CONST.NORMAL);
         return userDao.insert(user);

@@ -1,4 +1,5 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="edu.fzu.sm.CONST" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/12/9
@@ -8,9 +9,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     //取得项目名
-    String bashPath=request.getContextPath()+"/";
+    String bashPath=request.getContextPath();
 %>
-<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -30,14 +30,14 @@
 
     <!-- CSS
   ================================================== -->
-    <link rel="stylesheet" href="<%=bashPath%>jsp/video/css/zerogrid.css">
-    <link rel="stylesheet" href="<%=bashPath%>jsp/video/css/style.css">
-    <link rel="stylesheet" href="<%=bashPath%>jsp/video/css/menu.css">
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/video/css/zerogrid.css">
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/video/css/style.css">
+    <link rel="stylesheet" href="<%=bashPath%>/jsp/video/css/menu.css">
     <!-- Owl Carousel Assets -->
-    <link href="<%=bashPath%>jsp/video/css/owl.carousel.css" rel="stylesheet">
-    <link href="<%=bashPath%>jsp/video/css/owl.theme.css" rel="stylesheet">
+    <link href="<%=bashPath%>/jsp/video/css/owl.carousel.css" rel="stylesheet">
+    <link href="<%=bashPath%>/jsp/video/css/owl.theme.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="<%=bashPath%>jsp/video/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=bashPath%>/jsp/video/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!--[if lt IE 8]>
     <div style=' clear: both; text-align:center; position: relative;'>
@@ -52,6 +52,12 @@
     <script src="js/html5.js"></script>
     <script src="js/css3-mediaqueries.js"></script>
     <![endif]-->
+<script type="text/javascript">
+    function  Search() {
+        var $s=$("#s").val();
+        window.location.href="<%=bashPath%>/VideoBrowserServlet?area=全部&title="+$s;
+    }
+</script>
 
 </head>
 <body id="wrapper">
@@ -62,10 +68,10 @@
         <div class="wrap-header" >
             <div class="zerogrid" >
                 <div class="row" >
-                    <a href="index.jsp" class="logo"><img src="<%=bashPath%>jsp/video/images/logo3.png" width="180"></a>
+                    <a href="<%=bashPath%>/VideoIndexServlet" class="logo"><img src="<%=bashPath%>/jsp/video/images/logo3.png" width="180"></a>
                     <ul class="social">
-                        <li><a href="<%=bashPath%>jsp/user/userContribute.jsp" title="发布视频"><i class="fa fa-upload"></i></a></li>
-                        <li><a href="<%=bashPath%>jsp/user/userInfo.jsp" title="个人信息"><i class="fa fa-user"></i></a></li>
+                        <li><a href="<%=bashPath%>/jsp/users/Contribute.jsp" title="发布视频"><i class="fa fa-upload"></i></a></li>
+                        <li><a href="<%=bashPath%>/jsp/users/index.jsp" title="个人信息"><i class="fa fa-user"></i></a></li>
                         <li><a href="#" title="消息通知"><i class="fa fa-bell"></i></a></li>
                     </ul>
 
@@ -77,14 +83,14 @@
     <a href="#" class="nav-toggle">Toggle Navigation</a>
     <nav class="cmn-tile-nav">
         <ul class="clearfix">
-            <li class="colour-1"><a href="<%=bashPath%>index.jsp">首页</a></li>
-            <li class="colour-2"><a href="<%=bashPath%>jsp/video/browser.jsp?">动画</a></li>
-            <li class="colour-3"><a href="<%=bashPath%>jsp/video/browser.jsp?">音乐</a></li>
-            <li class="colour-4"><a href="<%=bashPath%>jsp/video/browser.jsp?">游戏</a></li>
-            <li class="colour-5"><a href="<%=bashPath%>jsp/video/browser.jsp?">追番</a></li>
-            <li class="colour-6"><a href="<%=bashPath%>jsp/video/browser.jsp?">影视</a></li>
-            <li class="colour-7"><a href="<%=bashPath%>jsp/video/browser.jsp?">美食</a></li>
-            <li class="colour-8"><a href="<%=bashPath%>jsp/video/browser.jsp?">More</a></li>
+            <li class="colour-1"><a href="<%=bashPath%>/VideoIndexServlet">首页</a></li>
+            <li class="colour-2"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_ANIMATION%>">动画</a></li>
+            <li class="colour-3"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_MUSIC%>">音乐</a></li>
+            <li class="colour-4"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_GAME%>">游戏</a></li>
+            <li class="colour-5"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_CARTOON%>">追番</a></li>
+            <li class="colour-6"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_MOVE%>">影视</a></li>
+            <li class="colour-7"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_FOOD%>">美食</a></li>
+            <li class="colour-8"><a href="<%=bashPath%>/VideoBrowserServlet?area=<%=CONST.AREA_ALL%>">ALL</a></li>
         </ul>
     </nav>
 
@@ -96,60 +102,64 @@
             <div class="row">
                 <div class="header">
 
-                    <h2>播放量最高</h2>
+                    <h2>最新作品</h2>
                 </div>
                 <div class="row">
                     <div class="most-viewed">
+
                         <div class="col-2-4">
                             <div class="wrap-col">
                                 <div class="zoom-container">
-                                    <a href="#">
+                                    <a href="<%=bashPath%>/ToShowVideoServlet?vid=${newvideolist[0].vid}">
 									<span class="zoom-caption">
 										<i class="icon-play fa fa-play"></i>
 									</span>
-                                        <img src="images/14.jpg"/>
+                                        <img src="<%=bashPath%>/${newvideolist[0].psrc}"/>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="extra">
+
                         <div class="col-1-4">
                             <div class="wrap-col">
                                 <div class="zoom-container">
-                                    <a href="single.html">
+                                    <a href="<%=bashPath%>/ToShowVideoServlet?vid=${newvideolist[1].vid}">
 									<span class="zoom-caption">
 										<i class="icon-play fa fa-play"></i>
 									</span>
-                                        <img src="<%=bashPath%>jsp/video/images/1.jpg"/>
+                                        <img src="<%=bashPath%>/${newvideolist[1].psrc}"/>
                                     </a>
                                 </div>
                                 <div class="zoom-container">
-                                    <a href="single.html">
+                                    <a href="<%=bashPath%>/ToShowVideoServlet?vid=${newvideolist[2].vid}">
 									<span class="zoom-caption">
 										<i class="icon-play fa fa-play"></i>
 									</span>
-                                        <img src="<%=bashPath%>jsp/video/images/2.jpg"/>
+                                        <img src="<%=bashPath%>/${newvideolist[2].psrc}"/>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-1-4">
                             <div class="wrap-col">
                                 <div class="zoom-container">
-                                    <a href="single.html">
+                                    <a href="<%=bashPath%>/ToShowVideoServlet?vid=${newvideolist[3].vid}">
 									<span class="zoom-caption">
 										<i class="icon-play fa fa-play"></i>
 									</span>
-                                        <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
+                                        <img src="<%=bashPath%>/${newvideolist[3].psrc}"/>
                                     </a>
                                 </div>
                                 <div class="zoom-container">
-                                    <a href="single.html">
+                                    <a href="<%=bashPath%>/ToShowVideoServlet?vid=${newvideolist[4].vid}">
 									<span class="zoom-caption">
 										<i class="icon-play fa fa-play"></i>
 									</span>
-                                        <img src="images/14.jpg"/>
+                                        <img src="<%=bashPath%>/${newvideolist[4].psrc}"/>
                                     </a>
                                 </div>
                             </div>
@@ -166,423 +176,92 @@
                             </div>
                             <div class="row">
                                 <div id="owl-demo-1" class="owl-carousel">
+                                    <c:forEach items="${anvideolist}" var="video">
                                     <div class="item wrap-vid">
                                         <div class="zoom-container">
-                                            <a href="single.html">
+                                            <a href="<%=bashPath%>/ToShowVideoServlet?vid=${video.vid}">
 												<span class="zoom-caption">
 													<i class="icon-play fa fa-play"></i>
 												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/1.jpg"/>
+                                                <img src="<%=bashPath%>/${video.psrc}"/>
                                             </a>
                                         </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
+                                        <h3 class="vid-name"><a href="#">${video.title}</a></h3>
                                         <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
+                                            <h5>By <a href="#">${video.autor}</a></h5>
+                                            <span><i class="fa fa-calendar"></i>${video.createtime}</span>
+                                            <span><i class="fa fa-youtube-play"></i>${video.totalplay}</span>
                                         </div>
                                     </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/2.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/4.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="images/14.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </section>
 
-                        <section class="vid-sport">
+                        <section class="vid-tv">
                             <div class="header">
-                                <h2>音乐</h2>
+                                <h2>番剧</h2>
                             </div>
-                            <div class="row"><!--Start Box-->
+                            <div class="row">
                                 <div id="owl-demo-2" class="owl-carousel">
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
+                                    <c:forEach items="${cavideolist}" var="video">
+                                        <div class="item wrap-vid">
+                                            <div class="zoom-container">
+                                                <a href="<%=bashPath%>/ToShowVideoServlet?vid=${video.vid}">
 												<span class="zoom-caption">
 													<i class="icon-play fa fa-play"></i>
 												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/1.jpg"/>
-                                            </a>
+                                                    <img src="<%=bashPath%>/${video.psrc}"/>
+                                                </a>
+                                            </div>
+                                            <h3 class="vid-name"><a href="#">${video.title}</a></h3>
+                                            <div class="info">
+                                                <h5>By <a href="#">${video.autor}</a></h5>
+                                                <span><i class="fa fa-calendar"></i>${video.createtime}</span>
+                                                <span><i class="fa fa-youtube-play"></i>${video.totalplay}</span>
+                                            </div>
                                         </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/2.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/4.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="images/14.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </section>
 
-                        <section class="vid-music">
+                        <section class="vid-tv">
                             <div class="header">
-                                <h2>游戏</h2>
+                                <h2>美食</h2>
                             </div>
-                            <div class="row"><!--Start Box-->
+                            <div class="row">
                                 <div id="owl-demo-3" class="owl-carousel">
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
+                                    <c:forEach items="${fovideolist}" var="video">
+                                        <div class="item wrap-vid">
+                                            <div class="zoom-container">
+                                                <a href="<%=bashPath%>/ToShowVideoServlet?vid=${video.vid}">
 												<span class="zoom-caption">
 													<i class="icon-play fa fa-play"></i>
 												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/1.jpg"/>
-                                            </a>
+                                                    <img src="<%=bashPath%>/${video.psrc}"/>
+                                                </a>
+                                            </div>
+                                            <h3 class="vid-name"><a href="#">${video.title}</a></h3>
+                                            <div class="info">
+                                                <h5>By <a href="#">${video.autor}</a></h5>
+                                                <span><i class="fa fa-calendar"></i>${video.createtime}</span>
+                                                <span><i class="fa fa-youtube-play"></i>${video.totalplay}</span>
+                                            </div>
                                         </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/2.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/4.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="images/14.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item wrap-vid">
-                                        <div class="zoom-container">
-                                            <a href="single.html">
-												<span class="zoom-caption">
-													<i class="icon-play fa fa-play"></i>
-												</span>
-                                                <img src="<%=bashPath%>jsp/video/images/5.jpg"/>
-                                            </a>
-                                        </div>
-                                        <h3 class="vid-name"><a href="#">Video's Name</a></h3>
-                                        <div class="info">
-                                            <h5>By <a href="#">Kelvin</a></h5>
-                                            <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                            <span><i class="fa fa-heart"></i>1,200</span>
-                                        </div>
-                                    </div>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </section>
-
-
 
 
                     </div>
                 </div>
+
                 <div id="sidebar" class="col-1-3">
                     <form id="form-container" action="">
                         <!--<input type="submit" id="searchsubmit" value="" />-->
-                        <a class="search-submit-button" href="javascript:void(0)">
+                        <a class="search-submit-button" onclick="Search()">
                             <i class="fa fa-search"></i>
                         </a>
                         <div id="searchtext">
@@ -595,60 +274,26 @@
                             <h5>新人榜</h5>
                         </div>
                         <div class="wid-content">
+                            <c:forEach  items="${topnewlist}" var="video">
                             <div class="post wrap-vid">
                                 <div class="zoom-container">
-                                    <a href="single.html">
+                                    <a href="<%=bashPath%>/ToShowVideoServlet?vid=${video.vid}">
 										<span class="zoom-caption">
 											<i class="icon-play fa fa-play"></i>
 										</span>
-                                        <img src="<%=bashPath%>jsp/video/images/4.jpg"/>
+                                        <img src="<%=bashPath%>/${video.psrc}"/>
                                     </a>
                                 </div>
                                 <div class="wrapper">
-                                    <h5 class="vid-name"><a href="#">Video's Name</a></h5>
+                                    <h5 class="vid-name"><a href="#">${video.title}</a></h5>
                                     <div class="info">
-                                        <h6>By <a href="#">Kelvin</a></h6>
-                                        <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                        <span><i class="fa fa-heart"></i>1,200</span>
+                                        <h6>By <a href="#">${video.autor}</a></h6>
+                                        <span><i class="fa fa-calendar"></i>${video.createtime}</span>
+                                        <span><i class="fa fa-youtube-play"></i>${video.totalplay}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="post wrap-vid">
-                                <div class="zoom-container">
-                                    <a href="single.html">
-										<span class="zoom-caption">
-											<i class="icon-play fa fa-play"></i>
-										</span>
-                                        <img src="images/14.jpg"/>
-                                    </a>
-                                </div>
-                                <div class="wrapper">
-                                    <h5 class="vid-name"><a href="#">Video's Name</a></h5>
-                                    <div class="info">
-                                        <h6>By <a href="#">Kelvin</a></h6>
-                                        <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                        <span><i class="fa fa-heart"></i>1,200</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post wrap-vid">
-                                <div class="zoom-container">
-                                    <a href="single.html">
-										<span class="zoom-caption">
-											<i class="icon-play fa fa-play"></i>
-										</span>
-                                        <img src="<%=bashPath%>jsp/video/images/3.jpg"/>
-                                    </a>
-                                </div>
-                                <div class="wrapper">
-                                    <h5 class="vid-name"><a href="#">Video's Name</a></h5>
-                                    <div class="info">
-                                        <h6>By <a href="#">Kelvin</a></h6>
-                                        <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                        <span><i class="fa fa-heart"></i>1,200</span>
-                                    </div>
-                                </div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </div>
                     <!---- Start Widget ---->
@@ -657,60 +302,26 @@
                             <h5>Top榜</h5>
                         </div>
                         <div class="wid-content">
+                            <c:forEach items="${toVideosList}" var="video">
                             <div class="row">
                                 <div class="wrap-vid">
                                     <div class="zoom-container">
-                                        <a href="single.html">
+                                        <a href="<%=bashPath%>/ToShowVideoServlet?vid=${video.vid}">
 											<span class="zoom-caption">
 												<i class="icon-play fa fa-play"></i>
 											</span>
-                                            <img src="<%=bashPath%>jsp/video/images/1.jpg"/>
+                                            <img src="<%=bashPath%>/${video.psrc}"/>
                                         </a>
                                     </div>
-                                    <h3 class="vid-name">Video's Name</h3>
+                                    <h3 class="vid-name">${video.title}</h3>
                                     <div class="info">
-                                        <h5>By <a href="#">Kelvin</a></h5>
-                                        <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                        <span><i class="fa fa-heart"></i>1,200</span>
+                                        <h5>By <a href="#">${video.autor}</a></h5>
+                                        <span><i class="fa fa-calendar"></i>${video.createtime}</span>
+                                        <span><i class="fa fa-youtube-play"></i>${video.totalplay}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="wrap-vid">
-                                    <div class="zoom-container">
-                                        <a href="single.html">
-											<span class="zoom-caption">
-												<i class="icon-play fa fa-play"></i>
-											</span>
-                                            <img src="<%=bashPath%>jsp/video/images/2.jpg"/>
-                                        </a>
-                                    </div>
-                                    <h3 class="vid-name">Video's Name</h3>
-                                    <div class="info">
-                                        <h5>By <a href="#">Kelvin</a></h5>
-                                        <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                        <span><i class="fa fa-heart"></i>1,200</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="wrap-vid">
-                                    <div class="zoom-container">
-                                        <a href="single.html">
-											<span class="zoom-caption">
-												<i class="icon-play fa fa-play"></i>
-											</span>
-                                            <img src="<%=bashPath%>jsp/video/images/4.jpg"/>
-                                        </a>
-                                    </div>
-                                    <h3 class="vid-name">Video's Name</h3>
-                                    <div class="info">
-                                        <h5>By <a href="#">Kelvin</a></h5>
-                                        <span><i class="fa fa-calendar"></i>25/3/2015</span>
-                                        <span><i class="fa fa-heart"></i>1,200</span>
-                                    </div>
-                                </div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
@@ -726,19 +337,19 @@
         <div class="zerogrid top-footer">
             <div class="row">
                 <div class="col-1-5">
-                    <a href="#"><img src="<%=bashPath%>jsp/video/images/bottom1.PNG"/></a>
+                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/bottom1.PNG"/></a>
                 </div>
                 <div class="col-1-5">
-                    <a href="#"><img src="<%=bashPath%>jsp/video/images/bottom2.png"/></a>
+                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/bottom2.png"/></a>
                 </div>
                 <div class="col-1-5">
-                    <a href="#"><img src="<%=bashPath%>jsp/video/images/bottom3.PNG"/></a>
+                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/bottom3.PNG"/></a>
                 </div>
                 <div class="col-1-5">
-                    <a href="#"><img src="<%=bashPath%>jsp/video/images/bottom4.png"/></a>
+                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/bottom4.png"/></a>
                 </div>
                 <div class="col-1-5">
-                    <a href="#"><img src="<%=bashPath%>jsp/video/images/bottom5.png"/></a>
+                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/bottom5.png"/></a>
                 </div>
             </div>
         </div>
@@ -746,7 +357,7 @@
             <div class="row">
                 <div class="col-1-4 col-footer-1">
                     <div class="wrap-col">
-                        <a href="index.html" class="logo"><img src="<%=bashPath%>jsp/video/images/logo3.png"/></a>
+                        <a href="index.html" class="logo"><img src="<%=bashPath%>/jsp/video/images/logo3.png"/></a>
                         <p>「浪子的真情。」——塞西莉亚花的花语。 「我现在会为你歌颂美好的万物万象—— 四季轮转，四风从不止息。 当然啦，功劳也不是它们的，主要是我的。 要是没有吟游诗人，谁去把这些传唱？」
                             <br> &nbsp;&nbsp;&nbsp; ——当温迪彻底沉醉于美酒时，他会如此放声歌唱。
                         </p>
@@ -780,30 +391,30 @@
                         <div class="row">
                             <div class="col-1-4">
                                 <div class="wrap-col">
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/1.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/2.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/3.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/1.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/2.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/3.jpg"/></a>
                                 </div>
                             </div>
                             <div class="col-1-4">
                                 <div class="wrap-col">
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/4.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/5.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/6.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/4.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/5.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/6.jpg"/></a>
                                 </div>
                             </div>
                             <div class="col-1-4">
                                 <div class="wrap-col">
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/7.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/8.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/9.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/7.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/8.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/9.jpg"/></a>
                                 </div>
                             </div>
                             <div class="col-1-4">
                                 <div class="wrap-col">
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/10.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/11.jpg"/></a>
-                                    <a href="#"><img src="<%=bashPath%>jsp/video/images/12.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/10.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/11.jpg"/></a>
+                                    <a href="#"><img src="<%=bashPath%>/jsp/video/images/12.jpg"/></a>
                                 </div>
                             </div>
                         </div>
@@ -815,11 +426,11 @@
     </footer>
 
     <!-- Slider -->
-    <script src="<%=bashPath%>jsp/video/js/jquery-2.1.1.js"></script>
-    <script src="<%=bashPath%>jsp/video/js/demo.js"></script>
-    <script src="<%=bashPath%>jsp/video/js/classie.js"></script>
+    <script src="<%=bashPath%>/jsp/video/js/jquery-2.1.1.js"></script>
+    <script src="<%=bashPath%>/jsp/video/js/demo.js"></script>
+    <script src="<%=bashPath%>/jsp/video/js/classie.js"></script>
     <!-- Carousel -->
-    <script src="<%=bashPath%>jsp/video/js/owl.carousel.js"></script>
+    <script src="<%=bashPath%>/jsp/video/js/owl.carousel.js"></script>
     <script>
         $(document).ready(function () {
 

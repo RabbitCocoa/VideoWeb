@@ -18,7 +18,16 @@
         </init-param>
     </filter>
 
+    <filter>
+        <filter-name>Login</filter-name>
+        <filter-class>edu.fzu.sm.Filter.LoginFilter</filter-class>
+    </filter>
 
+    <filter-mapping>
+        <filter-name>Login</filter-name>
+        <url-pattern>/jsp/users/*</url-pattern>
+        <url-pattern>/jsp/backs/*</url-pattern>
+    </filter-mapping>
 
     <filter-mapping>
         <filter-name>encoding</filter-name>

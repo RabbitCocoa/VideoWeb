@@ -6,17 +6,54 @@ public class Videos {
     private String vsrc;
     private String psrc;
     private String area;
-    private String dec;
+    private String dection;
+
+    @Override
+    public String toString() {
+        return "Videos{" +
+                "vid='" + vid + '\'' +
+                ", title='" + title + '\'' +
+                ", vsrc='" + vsrc + '\'' +
+                ", psrc='" + psrc + '\'' +
+                ", area='" + area + '\'' +
+                ", dection='" + dection + '\'' +
+                ", autor='" + autor + '\'' +
+                ", createtime='" + createtime + '\'' +
+                ", state='" + state + '\'' +
+                ", zan=" + zan +
+                ", bcollect=" + bcollect +
+                ", totalplay=" + totalplay +
+                '}';
+    }
+
     private String autor;
     private String createtime;
     private String state;
-    private int zan;
+    private Integer zan;
+    private Integer bcollect;
+    private Integer totalplay;
 
-    public int getZan() {
+    public Integer getBcollect() {
+        return bcollect;
+    }
+
+    public void setBcollect(Integer bcollect) {
+        this.bcollect = bcollect;
+    }
+
+    public Integer getTotalplay() {
+        return totalplay;
+    }
+
+    public void setTotalplay(Integer totalplay) {
+        this.totalplay = totalplay;
+    }
+
+    public Integer getZan() {
         return zan;
     }
 
-    public void setZan(int zan) {
+    public void setZan(Integer zan) {
         this.zan = zan;
     }
 
@@ -60,12 +97,12 @@ public class Videos {
         this.area = area;
     }
 
-    public String getDec() {
-        return dec;
+    public String getDection() {
+        return dection;
     }
 
-    public void setDec(String dec) {
-        this.dec = dec;
+    public void setDection(String dection) {
+        this.dection = dection;
     }
 
     public String getAutor() {

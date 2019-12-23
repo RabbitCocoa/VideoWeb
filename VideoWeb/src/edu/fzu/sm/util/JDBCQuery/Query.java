@@ -243,7 +243,7 @@ public abstract  class Query {
         // TODO Auto-generated method stub
         if(queryValue(sql, params)==null)
         {
-            return 0;
+            return new Integer(0);
         }
         return (Number)queryValue(sql, params);
     }

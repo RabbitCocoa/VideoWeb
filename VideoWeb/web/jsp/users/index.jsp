@@ -12,7 +12,6 @@
     String bashPath=request.getContextPath();
     String dirPath="jsp/users";
 %>
-<!DOCTYPE html>
 <head>
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +43,7 @@
     <header class="header fixed-top clearfix">
         <!--logo start-->
         <div class="brand">
-            <a href="<%=bashPath%>/index.jsp" class="logo">
+            <a href="<%=bashPath%>/VideoIndexServlet" class="logo">
                 旅团小屋
             </a>
             <div class="sidebar-toggle-box">
@@ -97,8 +96,7 @@
                             <span>我的视频</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="<%=bashPath%>/MyVideoServlet">已发布视频</a></li>
-                            <li><a href="<%=bashPath%>/MyExamineServlet">待审核列表</a></li>
+                            <li><a href="<%=bashPath%>/MyVideoServlet">作品一览</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -117,7 +115,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="<%=bashPath%>/VHistoryServlet">历史记录</a></li>
-                            <li><a href="<%=bashPath%>/VHistoryServlet">收藏夹</a></li>
+                            <li><a href="<%=bashPath%>/VCollectServlet">收藏夹</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -273,9 +271,14 @@
                                         <div class="bar light-blue" style="width:${cmovie}%;"></div>
                                     </div>
                                 </li>
-                                <li class="last">美食 <span class="pull-right">${cfood}%</span>
+                                <li >美食 <span class="pull-right">${cfood}%</span>
                                     <div class="progress progress-striped active progress-right">
                                         <div class="bar orange" style="width:${cfood}%;"></div>
+                                    </div>
+                                </li>
+                                <li class="last">其他 <span class="pull-right">${cohter}%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar orange" style="width:${cohter}%;"></div>
                                     </div>
                                 </li>
                             </ul>
@@ -292,6 +295,7 @@
                                 <th>标题</th>
                                 <th>状态</th>
                                 <th>封面</th>
+                                <th>分区</th>
                                 <th>点赞</th>
                             </tr>
                             </thead>
@@ -301,8 +305,20 @@
                             <tr>
                                 <th scope="row">${v.index+1}</th>
                                 <td>${move.title}</td>
-                                <td><span class="label label-success">${move.state}</span></td>
-                                <td><h5 class="down"><img src="<%=bashPath%>/${move.psrc}" width="200px"></h5></td>
+
+
+                                <c:if test="${move.state eq '审核中'}">
+                                <td><span class="label label-danger">${move.state}</span></td>
+                                </c:if>
+                                <c:if test="${move.state eq '已发布'}">
+                                    <td><span class="label label-success">${move.state}</span></td>
+                                </c:if>
+                                <c:if test="${move.state eq '未过审'}">
+                                    <td><span class="label label-danger">${move.state}</span></td>
+                                </c:if>
+
+                                <td><h5 class="down"><a  href="<%=bashPath%>/ToShowVideoServlet?vid=${move.vid}"><img src="<%=bashPath%>/${move.psrc}" width="200" height="150"></a></h5></td>
+                                <td>${move.area}</td>
                                 <td>${move.zan}</td>
                             </tr>
                             </c:forEach>
