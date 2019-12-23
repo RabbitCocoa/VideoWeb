@@ -22,19 +22,31 @@ public class CollectServlet extends HttpServlet {
         String vid=req.getParameter("vid");
         User user= (User) req.getSession().getAttribute("user");
         Videos videos=service.queryVideoById(vid);
+
+
+
         Collect collect=new Collect();
         collect.setGname("默认");
         collect.setVid(vid);
         collect.setUid(user.getName());
         collect.setBuid(videos.getAutor());
-        String sql="select gid  from groups where uid=?";
-        String gid= (String) MysqlQuery.query.queryValue(sql,new Object[]{user.getName()});
 
-        collect.setGid(gid);
-        collect.setTime(PublicUtil.getCurrentTimeStr());
+        /*判断是否存在该收藏，存在则删除*/
+        if(MysqlQuery.query.queryNumber("select count(1) from collect where vid=? and uid=?",new Object[]{
+                collect.getVid(),collect.getUid()}).intValue()==0
+        ) {
+            String sql = "select gid  from groups where uid=?";
+            String gid = (String) MysqlQuery.query.queryValue(sql, new Object[]{user.getName()});
+            collect.setGid(gid);
+            collect.setTime(PublicUtil.getCurrentTimeStr());
 
-        MysqlQuery.query.insert(collect);
-    
+            MysqlQuery.query.insert(collect);
+
+        }
+        else{
+            collect= (Collect) MysqlQuery.query.queryRows("select * from collect where vid=? and uid=?",Collect.class,new Object[]{collect.getVid(),collect.getUid()}).get(0);
+            MysqlQuery.query.delete(collect);
+        }
         req.getRequestDispatcher("/ToShowVideoServlet").forward(req,resp);
     }
 
