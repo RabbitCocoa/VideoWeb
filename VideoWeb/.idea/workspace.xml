@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3075cce7-b861-4a97-bdb9-1f5b3faaa179" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/CollectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VideoWeb_war_exploded/WEB-INF/classes/edu/fzu/sm/servlet/CollectServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/CollectServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VideoWeb/edu/fzu/sm/servlet/CollectServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/CollectServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/fzu/sm/servlet/CollectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resource/myvideo.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +86,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/jsp/video/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resource" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15893386" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -284,7 +281,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -322,7 +319,7 @@
       <workItem from="1577063379721" duration="2398000" />
       <workItem from="1577067892003" duration="3778000" />
       <workItem from="1577081122472" duration="15126000" />
-      <workItem from="1577114817928" duration="1972000" />
+      <workItem from="1577114817928" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="重构了前端的部分页面，完成了登陆、注册、后台控制台以及用户的查看与删除。新增了常量类，PublicUtil公共工具类，使用反射简化数据传输。">
       <created>1576603691720</created>
@@ -352,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577117119386</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="&quot;完成收工 目前收藏只支持默认文件夹&quot;">
+      <created>1577118046160</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1577118046160</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,10 +406,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576332808710" />
-    <state x="310" y="110" key="CommitChangelistDialog2" timestamp="1577117112264">
+    <state x="310" y="110" key="CommitChangelistDialog2" timestamp="1577118043745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="310" y="110" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1577117112264" />
+    <state x="310" y="110" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1577118043745" />
     <state width="422" height="466" key="DebuggerActiveHint" timestamp="1576937944968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -502,10 +506,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1576636148452" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1577002690996">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1577118110421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577002690996" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577118110421" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1577114876980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
